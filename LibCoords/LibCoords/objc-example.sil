@@ -1,0 +1,25 @@
+// LocationWrapper.objcTest() -> Bool
+sil @_TFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool {
+// %0                                             // user: %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":96:23, scope 92 // id: %1
+  %2 = integer_literal $Builtin.Int1, -1, loc "Location.swift":97:16, scope 93 // user: %3
+  %3 = struct $Bool (%2 : $Builtin.Int1), loc "Location.swift":97:16, scope 93 // user: %4
+  return %3 : $Bool, loc "Location.swift":97:9, scope 93 // id: %4
+}
+
+
+// @objc LocationWrapper.objcTest() -> Bool
+sil [thunk] @_TToFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(objc_method) (LocationWrapper) -> ObjCBool {
+// %0                                             // users: %4, %3, %1
+bb0(%0 : $LocationWrapper):
+  strong_retain %0 : $LocationWrapper, scope 95   // id: %1
+  // function_ref LocationWrapper.objcTest() -> Bool
+  %2 = function_ref @_TFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool, scope 95 // user: %3
+  %3 = apply %2(%0) : $@convention(method) (@guaranteed LocationWrapper) -> Bool, scope 95 // user: %6
+  strong_release %0 : $LocationWrapper, scope 95  // id: %4
+  // function_ref _convertBoolToObjCBool(Bool) -> ObjCBool
+  %5 = function_ref @_TF10ObjectiveC22_convertBoolToObjCBoolFSbVS_8ObjCBool : $@convention(thin) (Bool) -> ObjCBool, scope 95 // user: %6
+  %6 = apply %5(%3) : $@convention(thin) (Bool) -> ObjCBool, scope 95 // user: %7
+  return %6 : $ObjCBool, scope 95                 // id: %7
+}

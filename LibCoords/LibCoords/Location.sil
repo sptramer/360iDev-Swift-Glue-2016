@@ -1,0 +1,2482 @@
+sil_stage canonical
+
+import Builtin
+import Swift
+import SwiftShims
+
+// static CommandLine._argc
+sil_global [fragile] @_TZvOs11CommandLine5_argcVs5Int32 : $Int32
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4
+sil_global private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4 : $Builtin.Word
+
+// static CommandLine._unsafeArgv
+sil_global [fragile] @_TZvOs11CommandLine11_unsafeArgvGSpGSqGSpVs4Int8___ : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>
+
+sil_scope 1 {  parent @main : $@convention(c) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> Int32 }
+
+// main
+sil @main : $@convention(c) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> Int32 {
+// %0                                             // user: %3
+// %1                                             // user: %9
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>):
+  %2 = global_addr @_TZvOs11CommandLine5_argcVs5Int32 : $*Int32, scope 1 // user: %3
+  store %0 to %2 : $*Int32, scope 1               // id: %3
+  %4 = global_addr @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4 : $*Builtin.Word, scope 1 // user: %5
+  %5 = address_to_pointer %4 : $*Builtin.Word to $Builtin.RawPointer, scope 1 // user: %7
+  // function_ref globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4
+  %6 = function_ref @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4 : $@convention(thin) () -> (), scope 1 // user: %7
+  %7 = builtin "once"(%5 : $Builtin.RawPointer, %6 : $@convention(thin) () -> ()) : $(), scope 1
+  %8 = global_addr @_TZvOs11CommandLine11_unsafeArgvGSpGSqGSpVs4Int8___ : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 1 // user: %9
+  store %1 to %8 : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 1 // id: %9
+  %10 = tuple (), scope 1
+  %11 = integer_literal $Builtin.Int32, 0, scope 1 // user: %12
+  %12 = struct $Int32 (%11 : $Builtin.Int32), scope 1 // user: %13
+  return %12 : $Int32, scope 1                    // id: %13
+}
+
+sil_scope 2 {  parent @_TFs20_stdlib_didEnterMainFT4argcVs5Int324argvGSpGSqGSpVs4Int8____T_ : $@convention(thin) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> () }
+
+// _stdlib_didEnterMain(argc : Int32, argv : UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>) -> ()
+sil public_external [transparent] [fragile] @_TFs20_stdlib_didEnterMainFT4argcVs5Int324argvGSpGSqGSpVs4Int8____T_ : $@convention(thin) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> () {
+// %0                                             // users: %5, %2
+// %1                                             // users: %11, %3
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>):
+  debug_value %0 : $Int32, scope 2                // id: %2
+  debug_value %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 2 // id: %3
+  %4 = global_addr @_TZvOs11CommandLine5_argcVs5Int32 : $*Int32, scope 2 // user: %5
+  store %0 to %4 : $*Int32, scope 2               // id: %5
+  %6 = global_addr @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_token4 : $*Builtin.Word, scope 2 // user: %7
+  %7 = address_to_pointer %6 : $*Builtin.Word to $Builtin.RawPointer, scope 2 // user: %9
+  // function_ref globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4
+  %8 = function_ref @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4 : $@convention(thin) () -> (), scope 2 // user: %9
+  %9 = builtin "once"(%7 : $Builtin.RawPointer, %8 : $@convention(thin) () -> ()) : $(), scope 2
+  %10 = global_addr @_TZvOs11CommandLine11_unsafeArgvGSpGSqGSpVs4Int8___ : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 2 // user: %11
+  store %1 to %10 : $*UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>, scope 2 // id: %11
+  %12 = tuple (), scope 2                         // user: %13
+  return %12 : $(), scope 2                       // id: %13
+}
+
+sil_scope 3 {  parent @_TFO8Location15CoordinateErrorg9hashValueSi : $@convention(method) (CoordinateError) -> Int }
+sil_scope 4 {  parent 3 }
+sil_scope 5 {  parent 4 }
+sil_scope 6 {  parent 4 }
+sil_scope 7 {  parent 4 }
+
+// CoordinateError.hashValue.getter
+sil @_TFO8Location15CoordinateErrorg9hashValueSi : $@convention(method) (CoordinateError) -> Int {
+// %0                                             // users: %3, %2
+bb0(%0 : $CoordinateError):
+  %1 = alloc_stack $Int, var, name "index", scope 4 // users: %12, %10, %6, %15
+  debug_value %0 : $CoordinateError, let, name "self", argno 1, scope 3 // id: %2
+  switch_enum %0 : $CoordinateError, case #CoordinateError.WrongDimensions!enumelt: bb1, case #CoordinateError.CantExist!enumelt: bb2, scope 5 // id: %3
+
+bb1:                                              // Preds: bb0
+  %4 = integer_literal $Builtin.Int64, 0, scope 6 // user: %5
+  %5 = struct $Int (%4 : $Builtin.Int64), scope 6 // user: %6
+  store %5 to %1 : $*Int, scope 6                 // id: %6
+  br bb3, scope 4                                 // id: %7
+
+bb2:                                              // Preds: bb0
+  %8 = integer_literal $Builtin.Int64, 1, scope 7 // user: %9
+  %9 = struct $Int (%8 : $Builtin.Int64), scope 7 // user: %10
+  store %9 to %1 : $*Int, scope 7                 // id: %10
+  br bb3, scope 4                                 // id: %11
+
+bb3:                                              // Preds: bb2 bb1
+  %12 = load %1 : $*Int, scope 4                  // user: %14
+  // function_ref Int.hashValue.getter
+  %13 = function_ref @_TFSig9hashValueSi : $@convention(method) (Int) -> Int, scope 4 // user: %14
+  %14 = apply %13(%12) : $@convention(method) (Int) -> Int, scope 4 // user: %16
+  dealloc_stack %1 : $*Int, scope 4               // id: %15
+  return %14 : $Int, scope 4                      // id: %16
+}
+
+sil_scope 8 {  parent @_TFSiCfT22_builtinIntegerLiteralBi2048__Si : $@convention(method) (Builtin.Int2048, @thin Int.Type) -> Int }
+
+// Int.init(_builtinIntegerLiteral : Builtin.Int2048) -> Int
+sil public_external [transparent] [fragile] @_TFSiCfT22_builtinIntegerLiteralBi2048__Si : $@convention(method) (Builtin.Int2048, @thin Int.Type) -> Int {
+// %0                                             // users: %3, %2
+bb0(%0 : $Builtin.Int2048, %1 : $@thin Int.Type):
+  debug_value %0 : $Builtin.Int2048, scope 8      // id: %2
+  %3 = builtin "s_to_s_checked_trunc_Int2048_Int64"(%0 : $Builtin.Int2048) : $(Builtin.Int64, Builtin.Int1), scope 8 // user: %4
+  %4 = tuple_extract %3 : $(Builtin.Int64, Builtin.Int1), 0, scope 8 // user: %5
+  %5 = struct $Int (%4 : $Builtin.Int64), scope 8 // user: %6
+  return %5 : $Int, scope 8                       // id: %6
+}
+
+
+// Int.hashValue.getter
+sil [fragile] [always_inline] @_TFSig9hashValueSi : $@convention(method) (Int) -> Int
+
+sil_scope 9 {  parent @_TFO8Location15CoordinateErrorCfT8rawValueSi_GSqS0__ : $@convention(method) (Int, @thin CoordinateError.Type) -> Optional<CoordinateError> }
+sil_scope 10 {  parent 9 }
+sil_scope 11 {  parent 10 }
+sil_scope 12 {  parent 10 }
+sil_scope 13 {  parent 10 }
+sil_scope 14 {  parent 10 }
+sil_scope 15 {  parent 10 }
+
+// CoordinateError.init(rawValue : Int) -> CoordinateError?
+sil @_TFO8Location15CoordinateErrorCfT8rawValueSi_GSqS0__ : $@convention(method) (Int, @thin CoordinateError.Type) -> Optional<CoordinateError> {
+// %0                                             // users: %18, %6, %16, %4, %3
+bb0(%0 : $Int, %1 : $@thin CoordinateError.Type):
+  %2 = alloc_stack $CoordinateError, var, name "self", argno 2, scope 9 // users: %29, %25, %13, %35
+  debug_value %0 : $Int, let, name "rawValue", argno 1, scope 9 // id: %3
+  debug_value %0 : $Int, let, name "$match", scope 11 // id: %4
+  %5 = integer_literal $Builtin.Int64, 0, scope 11 // user: %7
+  %6 = struct_extract %0 : $Int, #Int._value, scope 11 // user: %7
+  %7 = builtin "cmp_eq_Int64"(%5 : $Builtin.Int64, %6 : $Builtin.Int64) : $Builtin.Int1, scope 11 // user: %8
+  %8 = struct $Bool (%7 : $Builtin.Int1), scope 11 // user: %9
+  %9 = struct_extract %8 : $Bool, #Bool._value, scope 11 // user: %10
+  cond_br %9, bb1, bb2, scope 11                  // id: %10
+
+bb1:                                              // Preds: bb0
+  %11 = metatype $@thin CoordinateError.Type, scope 12
+  %12 = enum $CoordinateError, #CoordinateError.WrongDimensions!enumelt, scope 12 // user: %13
+  store %12 to %2 : $*CoordinateError, scope 12   // id: %13
+  br bb7, scope 10                                // id: %14
+
+bb2:                                              // Preds: bb0
+  br bb3, scope 11                                // id: %15
+
+bb3:                                              // Preds: bb2
+  debug_value %0 : $Int, let, name "$match", loc "Location.swift":13:10, scope 13 // id: %16
+  %17 = integer_literal $Builtin.Int64, 1, loc "Location.swift":13:10, scope 13 // user: %19
+  %18 = struct_extract %0 : $Int, #Int._value, loc "Location.swift":13:10, scope 13 // user: %19
+  %19 = builtin "cmp_eq_Int64"(%17 : $Builtin.Int64, %18 : $Builtin.Int64) : $Builtin.Int1, loc "Location.swift":13:10, scope 13 // user: %20
+  %20 = struct $Bool (%19 : $Builtin.Int1), loc "Location.swift":13:10, scope 13 // user: %21
+  %21 = struct_extract %20 : $Bool, #Bool._value, loc "Location.swift":13:10, scope 13 // user: %22
+  cond_br %21, bb4, bb5, loc "Location.swift":13:10, scope 13 // id: %22
+
+bb4:                                              // Preds: bb3
+  %23 = metatype $@thin CoordinateError.Type, scope 14
+  %24 = enum $CoordinateError, #CoordinateError.CantExist!enumelt, scope 14 // user: %25
+  store %24 to %2 : $*CoordinateError, scope 14   // id: %25
+  br bb7, scope 10                                // id: %26
+
+bb5:                                              // Preds: bb3
+  br bb6, loc "Location.swift":13:10, scope 13    // id: %27
+
+bb6:                                              // Preds: bb5
+  br bb8, scope 15                                // id: %28
+
+bb7:                                              // Preds: bb4 bb1
+  %29 = load %2 : $*CoordinateError, scope 10     // user: %30
+  %30 = enum $Optional<CoordinateError>, #Optional.some!enumelt.1, %29 : $CoordinateError, scope 10 // user: %31
+  br bb9(%30 : $Optional<CoordinateError>), scope 10 // id: %31
+
+bb8:                                              // Preds: bb6
+  %32 = enum $Optional<CoordinateError>, #Optional.none!enumelt, scope 9 // user: %33
+  br bb9(%32 : $Optional<CoordinateError>), scope 9 // id: %33
+
+// %34                                            // user: %36
+bb9(%34 : $Optional<CoordinateError>):            // Preds: bb7 bb8
+  dealloc_stack %2 : $*CoordinateError, scope 9   // id: %35
+  return %34 : $Optional<CoordinateError>, scope 9 // id: %36
+}
+
+sil_scope 16 {  parent @_TFSb21_getBuiltinLogicValuefT_Bi1_ : $@convention(method) (Bool) -> Builtin.Int1 }
+
+// Bool._getBuiltinLogicValue() -> Builtin.Int1
+sil public_external [transparent] [fragile] @_TFSb21_getBuiltinLogicValuefT_Bi1_ : $@convention(method) (Bool) -> Builtin.Int1 {
+// %0                                             // users: %2, %1
+bb0(%0 : $Bool):
+  debug_value %0 : $Bool, scope 16                // id: %1
+  %2 = struct_extract %0 : $Bool, #Bool._value, scope 16 // user: %3
+  return %2 : $Builtin.Int1, scope 16             // id: %3
+}
+
+sil_scope 17 {  parent @_TFsoi2teuRxs9EquatablerFTxx_Sb : $@convention(thin) <τ_0_0 where τ_0_0 : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool }
+
+// ~= infix<A where ...> (A, A) -> Bool
+sil public_external [transparent] [fragile] @_TFsoi2teuRxs9EquatablerFTxx_Sb : $@convention(thin) <T where T : Equatable> (@in T, @in T) -> Bool {
+// %0                                             // users: %6, %2
+// %1                                             // users: %6, %3
+bb0(%0 : $*T, %1 : $*T):
+  debug_value_addr %0 : $*T, scope 17             // id: %2
+  debug_value_addr %1 : $*T, scope 17             // id: %3
+  %4 = witness_method $T, #Equatable."=="!1 : $@convention(witness_method) <τ_0_0 where τ_0_0 : Equatable> (@in τ_0_0, @in τ_0_0, @thick τ_0_0.Type) -> Bool, scope 17 // user: %6
+  %5 = metatype $@thick T.Type, scope 17          // user: %6
+  %6 = apply %4<T>(%0, %1, %5) : $@convention(witness_method) <τ_0_0 where τ_0_0 : Equatable> (@in τ_0_0, @in τ_0_0, @thick τ_0_0.Type) -> Bool, scope 17 // user: %7
+  return %6 : $Bool, scope 17                     // id: %7
+}
+
+sil_scope 18 {  parent @_TFO8Location15CoordinateErrorg8rawValueSi : $@convention(method) (CoordinateError) -> Int }
+sil_scope 19 {  parent 18 }
+sil_scope 20 {  parent 19 }
+sil_scope 21 {  parent 19 }
+sil_scope 22 {  parent 19 }
+
+// CoordinateError.rawValue.getter
+sil @_TFO8Location15CoordinateErrorg8rawValueSi : $@convention(method) (CoordinateError) -> Int {
+// %0                                             // users: %2, %1
+bb0(%0 : $CoordinateError):
+  debug_value %0 : $CoordinateError, let, name "self", argno 1, scope 18 // id: %1
+  switch_enum %0 : $CoordinateError, case #CoordinateError.WrongDimensions!enumelt: bb1, case #CoordinateError.CantExist!enumelt: bb2, scope 20 // id: %2
+
+bb1:                                              // Preds: bb0
+  %3 = integer_literal $Builtin.Int64, 0, scope 21 // user: %4
+  %4 = struct $Int (%3 : $Builtin.Int64), scope 21 // user: %5
+  br bb3(%4 : $Int), scope 21                     // id: %5
+
+bb2:                                              // Preds: bb0
+  %6 = integer_literal $Builtin.Int64, 1, loc "Location.swift":13:10, scope 22 // user: %7
+  %7 = struct $Int (%6 : $Builtin.Int64), loc "Location.swift":13:10, scope 22 // user: %8
+  br bb3(%7 : $Int), loc "Location.swift":13:10, scope 22 // id: %8
+
+// %9                                             // user: %10
+bb3(%9 : $Int):                                   // Preds: bb2 bb1
+  return %9 : $Int, scope 19                      // id: %10
+}
+
+sil_scope 23 {  parent @_TFO8Location15CoordinateErrorg5_codeSi : $@convention(method) (CoordinateError) -> Int }
+sil_scope 24 {  parent 23 }
+sil_scope 25 {  parent 24 }
+sil_scope 26 {  parent 24 }
+sil_scope 27 {  parent 24 }
+
+// CoordinateError._code.getter
+sil @_TFO8Location15CoordinateErrorg5_codeSi : $@convention(method) (CoordinateError) -> Int {
+// %0                                             // users: %2, %1
+bb0(%0 : $CoordinateError):
+  debug_value %0 : $CoordinateError, let, name "self", argno 1, scope 23 // id: %1
+  switch_enum %0 : $CoordinateError, case #CoordinateError.WrongDimensions!enumelt: bb1, case #CoordinateError.CantExist!enumelt: bb2, scope 25 // id: %2
+
+bb1:                                              // Preds: bb0
+  %3 = integer_literal $Builtin.Int64, 0, scope 26 // user: %4
+  %4 = struct $Int (%3 : $Builtin.Int64), scope 26 // user: %5
+  br bb3(%4 : $Int), scope 26                     // id: %5
+
+bb2:                                              // Preds: bb0
+  %6 = integer_literal $Builtin.Int64, 1, scope 27 // user: %7
+  %7 = struct $Int (%6 : $Builtin.Int64), scope 27 // user: %8
+  br bb3(%7 : $Int), scope 27                     // id: %8
+
+// %9                                             // user: %10
+bb3(%9 : $Int):                                   // Preds: bb2 bb1
+  return %9 : $Int, scope 24                      // id: %10
+}
+
+sil_scope 28 {  parent @_TTWO8Location15CoordinateErrors9EquatableS_ZFS1_oi2eefTxx_Sb : $@convention(witness_method) (@in CoordinateError, @in CoordinateError, @thick CoordinateError.Type) -> Bool }
+
+// protocol witness for static Equatable.== infix(A, A) -> Bool in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors9EquatableS_ZFS1_oi2eefTxx_Sb : $@convention(witness_method) (@in CoordinateError, @in CoordinateError, @thick CoordinateError.Type) -> Bool {
+// %0                                             // user: %4
+// %1                                             // user: %4
+bb0(%0 : $*CoordinateError, %1 : $*CoordinateError, %2 : $@thick CoordinateError.Type):
+  // function_ref == infix<A where ...> (A, A) -> Bool
+  %3 = function_ref @_TFsoi2eeuRxs16RawRepresentablewx8RawValues9EquatablerFTxx_Sb : $@convention(thin) <τ_0_0 where τ_0_0 : RawRepresentable, τ_0_0.RawValue : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool, scope 28 // user: %4
+  %4 = apply %3<CoordinateError, Int>(%0, %1) : $@convention(thin) <τ_0_0 where τ_0_0 : RawRepresentable, τ_0_0.RawValue : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool, scope 28 // user: %5
+  return %4 : $Bool, scope 28                     // id: %5
+}
+
+
+// == infix<A where ...> (A, A) -> Bool
+sil @_TFsoi2eeuRxs16RawRepresentablewx8RawValues9EquatablerFTxx_Sb : $@convention(thin) <τ_0_0 where τ_0_0 : RawRepresentable, τ_0_0.RawValue : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool
+
+sil_scope 29 {  parent @_TTWO8Location15CoordinateErrors8HashableS_FS1_g9hashValueSi : $@convention(witness_method) (@in_guaranteed CoordinateError) -> Int }
+
+// protocol witness for Hashable.hashValue.getter in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors8HashableS_FS1_g9hashValueSi : $@convention(witness_method) (@in_guaranteed CoordinateError) -> Int {
+// %0                                             // user: %1
+bb0(%0 : $*CoordinateError):
+  %1 = load %0 : $*CoordinateError, scope 29      // user: %3
+  // function_ref CoordinateError.hashValue.getter
+  %2 = function_ref @_TFO8Location15CoordinateErrorg9hashValueSi : $@convention(method) (CoordinateError) -> Int, scope 29 // user: %3
+  %3 = apply %2(%1) : $@convention(method) (CoordinateError) -> Int, scope 29 // user: %4
+  return %3 : $Int, scope 29                      // id: %4
+}
+
+sil_scope 30 {  parent @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_CfT8rawValuewx8RawValue_GSqx_ : $@convention(witness_method) (@in Int, @thick CoordinateError.Type) -> @out Optional<CoordinateError> }
+
+// protocol witness for RawRepresentable.init(rawValue : A.RawValue) -> A? in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_CfT8rawValuewx8RawValue_GSqx_ : $@convention(witness_method) (@in Int, @thick CoordinateError.Type) -> @out Optional<CoordinateError> {
+// %0                                             // user: %7
+// %1                                             // user: %3
+bb0(%0 : $*Optional<CoordinateError>, %1 : $*Int, %2 : $@thick CoordinateError.Type):
+  %3 = load %1 : $*Int, scope 30                  // user: %6
+  %4 = metatype $@thin CoordinateError.Type, scope 30 // user: %6
+  // function_ref CoordinateError.init(rawValue : Int) -> CoordinateError?
+  %5 = function_ref @_TFO8Location15CoordinateErrorCfT8rawValueSi_GSqS0__ : $@convention(method) (Int, @thin CoordinateError.Type) -> Optional<CoordinateError>, scope 30 // user: %6
+  %6 = apply %5(%3, %4) : $@convention(method) (Int, @thin CoordinateError.Type) -> Optional<CoordinateError>, scope 30 // user: %7
+  store %6 to %0 : $*Optional<CoordinateError>, scope 30 // id: %7
+  %8 = tuple (), scope 30                         // user: %9
+  return %8 : $(), scope 30                       // id: %9
+}
+
+sil_scope 31 {  parent @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_g8rawValuewx8RawValue : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out Int }
+
+// protocol witness for RawRepresentable.rawValue.getter in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_g8rawValuewx8RawValue : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out Int {
+// %0                                             // user: %5
+// %1                                             // user: %2
+bb0(%0 : $*Int, %1 : $*CoordinateError):
+  %2 = load %1 : $*CoordinateError, scope 31      // user: %4
+  // function_ref CoordinateError.rawValue.getter
+  %3 = function_ref @_TFO8Location15CoordinateErrorg8rawValueSi : $@convention(method) (CoordinateError) -> Int, scope 31 // user: %4
+  %4 = apply %3(%2) : $@convention(method) (CoordinateError) -> Int, scope 31 // user: %5
+  store %4 to %0 : $*Int, scope 31                // id: %5
+  %6 = tuple (), scope 31                         // user: %7
+  return %6 : $(), scope 31                       // id: %7
+}
+
+sil_scope 32 {  parent @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g7_domainSS : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @owned String }
+
+// protocol witness for Error._domain.getter in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g7_domainSS : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @owned String {
+// %0                                             // user: %2
+bb0(%0 : $*CoordinateError):
+  %1 = alloc_stack $CoordinateError, scope 32     // users: %5, %4, %2
+  copy_addr %0 to [initialization] %1 : $*CoordinateError, scope 32 // id: %2
+  // function_ref Error._domain.getter
+  %3 = function_ref @_TFEsPs5Errorg7_domainSS : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned String, scope 32 // user: %4
+  %4 = apply %3<CoordinateError>(%1) : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned String, scope 32 // user: %6
+  dealloc_stack %1 : $*CoordinateError, scope 32  // id: %5
+  return %4 : $String, scope 32                   // id: %6
+}
+
+
+// Error._domain.getter
+sil @_TFEsPs5Errorg7_domainSS : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned String
+
+sil_scope 33 {  parent @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g5_codeSi : $@convention(witness_method) (@in_guaranteed CoordinateError) -> Int }
+
+// protocol witness for Error._code.getter in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g5_codeSi : $@convention(witness_method) (@in_guaranteed CoordinateError) -> Int {
+// %0                                             // user: %1
+bb0(%0 : $*CoordinateError):
+  %1 = load %0 : $*CoordinateError, scope 33      // user: %3
+  // function_ref CoordinateError._code.getter
+  %2 = function_ref @_TFO8Location15CoordinateErrorg5_codeSi : $@convention(method) (CoordinateError) -> Int, scope 33 // user: %3
+  %3 = apply %2(%1) : $@convention(method) (CoordinateError) -> Int, scope 33 // user: %4
+  return %3 : $Int, scope 33                      // id: %4
+}
+
+sil_scope 34 {  parent @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g9_userInfoGSqP__ : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out Optional<Any> }
+
+// protocol witness for Error._userInfo.getter in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g9_userInfoGSqP__ : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out Optional<Any> {
+// %0                                             // user: %5
+// %1                                             // user: %3
+bb0(%0 : $*Optional<Any>, %1 : $*CoordinateError):
+  %2 = alloc_stack $CoordinateError, scope 34     // users: %7, %5, %3
+  copy_addr %1 to [initialization] %2 : $*CoordinateError, scope 34 // id: %3
+  // function_ref Error._userInfo.getter
+  %4 = function_ref @_TFEsPs5Errorg9_userInfoGSqP__ : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @out Optional<Any>, scope 34 // user: %5
+  %5 = apply %4<CoordinateError>(%0, %2) : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @out Optional<Any>, scope 34
+  %6 = tuple (), scope 34                         // user: %8
+  dealloc_stack %2 : $*CoordinateError, scope 34  // id: %7
+  return %6 : $(), scope 34                       // id: %8
+}
+
+
+// Error._userInfo.getter
+sil @_TFEsPs5Errorg9_userInfoGSqP__ : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @out Optional<Any>
+
+sil_scope 35 {  parent @_TTWO8Location15CoordinateErrors5ErrorS_FS1_19_getEmbeddedNSErrorfT_GSqPs9AnyObject__ : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @owned Optional<AnyObject> }
+
+// protocol witness for Error._getEmbeddedNSError() -> AnyObject? in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors5ErrorS_FS1_19_getEmbeddedNSErrorfT_GSqPs9AnyObject__ : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @owned Optional<AnyObject> {
+// %0                                             // user: %2
+bb0(%0 : $*CoordinateError):
+  %1 = alloc_stack $CoordinateError, scope 35     // users: %5, %4, %2
+  copy_addr %0 to [initialization] %1 : $*CoordinateError, scope 35 // id: %2
+  // function_ref Error._getEmbeddedNSError() -> AnyObject?
+  %3 = function_ref @_TFEsPs5Error19_getEmbeddedNSErrorfT_GSqPs9AnyObject__ : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned Optional<AnyObject>, scope 35 // user: %4
+  %4 = apply %3<CoordinateError>(%1) : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned Optional<AnyObject>, scope 35 // user: %6
+  dealloc_stack %1 : $*CoordinateError, scope 35  // id: %5
+  return %4 : $Optional<AnyObject>, scope 35      // id: %6
+}
+
+
+// Error._getEmbeddedNSError() -> AnyObject?
+sil @_TFEsPs5Error19_getEmbeddedNSErrorfT_GSqPs9AnyObject__ : $@convention(method) <τ_0_0 where τ_0_0 : Error> (@in_guaranteed τ_0_0) -> @owned Optional<AnyObject>
+
+sil_scope 36 {  parent @_TTWO8Location15CoordinateErrors9_HashableS_FS1_14_toAnyHashablefT_Vs11AnyHashable : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out AnyHashable }
+
+// protocol witness for _Hashable._toAnyHashable() -> AnyHashable in conformance CoordinateError
+sil [transparent] [thunk] @_TTWO8Location15CoordinateErrors9_HashableS_FS1_14_toAnyHashablefT_Vs11AnyHashable : $@convention(witness_method) (@in_guaranteed CoordinateError) -> @out AnyHashable {
+// %0                                             // user: %5
+// %1                                             // user: %3
+bb0(%0 : $*AnyHashable, %1 : $*CoordinateError):
+  %2 = alloc_stack $CoordinateError, scope 36     // users: %7, %5, %3
+  copy_addr %1 to [initialization] %2 : $*CoordinateError, scope 36 // id: %3
+  // function_ref Hashable._toAnyHashable() -> AnyHashable
+  %4 = function_ref @_TFEsPs8Hashable14_toAnyHashablefT_Vs11AnyHashable : $@convention(method) <τ_0_0 where τ_0_0 : Hashable> (@in_guaranteed τ_0_0) -> @out AnyHashable, scope 36 // user: %5
+  %5 = apply %4<CoordinateError>(%0, %2) : $@convention(method) <τ_0_0 where τ_0_0 : Hashable> (@in_guaranteed τ_0_0) -> @out AnyHashable, scope 36
+  %6 = tuple (), scope 36                         // user: %8
+  dealloc_stack %2 : $*CoordinateError, scope 36  // id: %7
+  return %6 : $(), scope 36                       // id: %8
+}
+
+
+// Hashable._toAnyHashable() -> AnyHashable
+sil @_TFEsPs8Hashable14_toAnyHashablefT_Vs11AnyHashable : $@convention(method) <τ_0_0 where τ_0_0 : Hashable> (@in_guaranteed τ_0_0) -> @out AnyHashable
+
+sil_scope 37 { loc "Location.swift":29:5 parent @_TFV8Location8LocationCfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @thin Location.Type) -> @owned Location }
+sil_scope 38 { loc "Location.swift":32:5 parent 37 }
+
+// Location.init(coordinate : (Position, Double), name : String) -> Location
+sil @_TFV8Location8LocationCfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @thin Location.Type) -> @owned Location {
+// %0                                             // user: %5
+// %1                                             // user: %5
+// %2                                             // users: %23, %19, %17, %21, %15, %7
+bb0(%0 : $Position, %1 : $Double, %2 : $String, %3 : $@thin Location.Type):
+  %4 = alloc_stack $Location, var, name "self", argno 3, loc "Location.swift":29:5, scope 37 // users: %10, %16, %25
+  %5 = tuple (%0 : $Position, %1 : $Double), loc "Location.swift":29:10, scope 37 // users: %9, %8, %6
+  debug_value %5 : $(Position, Double), let, name "coordinate", argno 1, loc "Location.swift":29:10, scope 37 // id: %6
+  debug_value %2 : $String, let, name "name", argno 2, loc "Location.swift":29:34, scope 37 // id: %7
+  %8 = tuple_extract %5 : $(Position, Double), 0, loc "Location.swift":30:27, scope 38 // users: %22, %18, %12
+  %9 = tuple_extract %5 : $(Position, Double), 1, loc "Location.swift":30:27, scope 38 // users: %22, %18, %14
+  %10 = struct_element_addr %4 : $*Location, #Location.coordinate, loc "Location.swift":30:25, scope 38 // users: %13, %11
+  %11 = tuple_element_addr %10 : $*(Position, Double), 0, loc "Location.swift":30:25, scope 38 // user: %12
+  store %8 to %11 : $*Position, loc "Location.swift":30:25, scope 38 // id: %12
+  %13 = tuple_element_addr %10 : $*(Position, Double), 1, loc "Location.swift":30:25, scope 38 // user: %14
+  store %9 to %13 : $*Double, loc "Location.swift":30:25, scope 38 // id: %14
+  retain_value %2 : $String, loc "Location.swift":31:21, scope 38 // id: %15
+  %16 = struct_element_addr %4 : $*Location, #Location.name, loc "Location.swift":31:19, scope 38 // user: %17
+  store %2 to %16 : $*String, loc "Location.swift":31:19, scope 38 // id: %17
+  %18 = tuple (%8 : $Position, %9 : $Double), loc "Location.swift":32:5, scope 38 // user: %19
+  %19 = struct $Location (%18 : $(Position, Double), %2 : $String), loc "Location.swift":32:5, scope 38 // users: %20, %26
+  retain_value %19 : $Location, loc "Location.swift":32:5, scope 38 // id: %20
+  release_value %2 : $String, loc "Location.swift":32:5, scope 38 // id: %21
+  %22 = tuple (%8 : $Position, %9 : $Double), loc "Location.swift":29:5, scope 38 // user: %23
+  %23 = struct $Location (%22 : $(Position, Double), %2 : $String), loc "Location.swift":29:5, scope 38 // user: %24
+  release_value %23 : $Location, loc "Location.swift":29:5, scope 38 // id: %24
+  dealloc_stack %4 : $*Location, loc "Location.swift":29:5, scope 38 // id: %25
+  return %19 : $Location, loc "Location.swift":32:5, scope 38 // id: %26
+}
+
+sil_scope 39 { loc "Location.swift":34:17 parent @_TFV8Location8Location6lengthfT_Sd : $@convention(method) (@guaranteed Location) -> Double }
+sil_scope 40 { loc "Location.swift":47:5 parent 39 }
+sil_scope 41 { loc "Location.swift":46:9 parent 40 }
+sil_scope 42 { loc "Location.swift":46:9 parent 41 }
+sil_scope 43 { loc "Location.swift":38:42 parent 42 }
+sil_scope 44 { loc "Location.swift":46:9 parent 41 }
+sil_scope 45 { loc "Location.swift":40:34 parent 44 }
+sil_scope 46 { loc "Location.swift":46:9 parent 41 }
+sil_scope 47 { loc "Location.swift":45:20 parent 46 }
+sil_scope 48 { loc "Location.swift":44:13 parent 47 }
+sil_scope 49 { loc "Location.swift":44:13 parent 48 }
+
+// Location.length() -> Double
+sil @_TFV8Location8Location6lengthfT_Sd : $@convention(method) (@guaranteed Location) -> Double {
+// %0                                             // users: %6, %2, %1
+bb0(%0 : $Location):
+  debug_value %0 : $Location, let, name "self", argno 1, loc "Location.swift":34:17, scope 39 // id: %1
+  %2 = struct_extract %0 : $Location, #Location.coordinate, loc "Location.swift":35:22, scope 40 // users: %4, %3
+  %3 = tuple_extract %2 : $(Position, Double), 0, loc "Location.swift":35:22, scope 40
+  %4 = tuple_extract %2 : $(Position, Double), 1, loc "Location.swift":35:22, scope 40 // users: %42, %41, %25, %24, %55, %5
+  debug_value %4 : $Double, let, name "y", loc "Location.swift":35:13, scope 40 // id: %5
+  %6 = struct_extract %0 : $Location, #Location.coordinate, loc "Location.swift":36:22, scope 40 // users: %8, %7
+  %7 = tuple_extract %6 : $(Position, Double), 0, loc "Location.swift":36:22, scope 40 // user: %9
+  %8 = tuple_extract %6 : $(Position, Double), 1, loc "Location.swift":36:22, scope 40
+  switch_enum %7 : $Position, case #Position.A!enumelt.1: bb1, case #Position.B!enumelt.1: bb2, case #Position.C!enumelt.1: bb3, loc "Location.swift":37:14, scope 41 // id: %9
+
+// %10                                            // users: %14, %13, %11
+bb1(%10 : $Int):                                  // Preds: bb0
+  debug_value %10 : $Int, let, name "x", loc "Location.swift":37:21, scope 42 // id: %11
+  // function_ref sqrt
+  %12 = function_ref @sqrt : $@convention(c) (Double) -> Double, loc "Location.swift":38:20, scope 43 // user: %32
+  %13 = struct_extract %10 : $Int, #Int._value, loc "Location.swift":38:33, scope 43 // user: %16
+  %14 = struct_extract %10 : $Int, #Int._value, loc "Location.swift":38:33, scope 43 // user: %16
+  %15 = integer_literal $Builtin.Int1, -1, loc "Location.swift":38:33, scope 43 // user: %16
+  %16 = builtin "smul_with_overflow_Int64"(%13 : $Builtin.Int64, %14 : $Builtin.Int64, %15 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), loc "Location.swift":38:33, scope 43 // users: %18, %17
+  %17 = tuple_extract %16 : $(Builtin.Int64, Builtin.Int1), 0, loc "Location.swift":38:33, scope 43 // user: %20
+  %18 = tuple_extract %16 : $(Builtin.Int64, Builtin.Int1), 1, loc "Location.swift":38:33, scope 43 // user: %19
+  cond_fail %18 : $Builtin.Int1, loc "Location.swift":38:33, scope 43 // id: %19
+  %20 = struct $Int (%17 : $Builtin.Int64), loc "Location.swift":38:33, scope 43 // user: %21
+  %21 = struct_extract %20 : $Int, #Int._value, loc "Location.swift":38:35, scope 43 // user: %22
+  %22 = builtin "sitofp_Int64_FPIEEE64"(%21 : $Builtin.Int64) : $Builtin.FPIEEE64, loc "Location.swift":38:35, scope 43 // user: %23
+  %23 = struct $Double (%22 : $Builtin.FPIEEE64), loc "Location.swift":38:35, scope 43 // user: %28
+  %24 = struct_extract %4 : $Double, #Double._value, loc "Location.swift":38:40, scope 43 // user: %26
+  %25 = struct_extract %4 : $Double, #Double._value, loc "Location.swift":38:40, scope 43 // user: %26
+  %26 = builtin "fmul_FPIEEE64"(%24 : $Builtin.FPIEEE64, %25 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":38:40, scope 43 // user: %27
+  %27 = struct $Double (%26 : $Builtin.FPIEEE64), loc "Location.swift":38:40, scope 43 // user: %29
+  %28 = struct_extract %23 : $Double, #Double._value, loc "Location.swift":38:37, scope 43 // user: %30
+  %29 = struct_extract %27 : $Double, #Double._value, loc "Location.swift":38:37, scope 43 // user: %30
+  %30 = builtin "fadd_FPIEEE64"(%28 : $Builtin.FPIEEE64, %29 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":38:37, scope 43 // user: %31
+  %31 = struct $Double (%30 : $Builtin.FPIEEE64), loc "Location.swift":38:37, scope 43 // user: %32
+  %32 = apply %12(%31) : $@convention(c) (Double) -> Double, loc "Location.swift":38:42, scope 43 // user: %33
+  br bb6(%32 : $Double), loc "Location.swift":38:13, scope 43 // id: %33
+
+// %34                                            // users: %38, %37, %35
+bb2(%34 : $Double):                               // Preds: bb0
+  debug_value %34 : $Double, let, name "x", loc "Location.swift":39:21, scope 44 // id: %35
+  // function_ref sqrt
+  %36 = function_ref @sqrt : $@convention(c) (Double) -> Double, loc "Location.swift":40:20, scope 45 // user: %49
+  %37 = struct_extract %34 : $Double, #Double._value, loc "Location.swift":40:26, scope 45 // user: %39
+  %38 = struct_extract %34 : $Double, #Double._value, loc "Location.swift":40:26, scope 45 // user: %39
+  %39 = builtin "fmul_FPIEEE64"(%37 : $Builtin.FPIEEE64, %38 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":40:26, scope 45 // user: %40
+  %40 = struct $Double (%39 : $Builtin.FPIEEE64), loc "Location.swift":40:26, scope 45 // user: %45
+  %41 = struct_extract %4 : $Double, #Double._value, loc "Location.swift":40:32, scope 45 // user: %43
+  %42 = struct_extract %4 : $Double, #Double._value, loc "Location.swift":40:32, scope 45 // user: %43
+  %43 = builtin "fmul_FPIEEE64"(%41 : $Builtin.FPIEEE64, %42 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":40:32, scope 45 // user: %44
+  %44 = struct $Double (%43 : $Builtin.FPIEEE64), loc "Location.swift":40:32, scope 45 // user: %46
+  %45 = struct_extract %40 : $Double, #Double._value, loc "Location.swift":40:29, scope 45 // user: %47
+  %46 = struct_extract %44 : $Double, #Double._value, loc "Location.swift":40:29, scope 45 // user: %47
+  %47 = builtin "fadd_FPIEEE64"(%45 : $Builtin.FPIEEE64, %46 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":40:29, scope 45 // user: %48
+  %48 = struct $Double (%47 : $Builtin.FPIEEE64), loc "Location.swift":40:29, scope 45 // user: %49
+  %49 = apply %36(%48) : $@convention(c) (Double) -> Double, loc "Location.swift":40:34, scope 45 // user: %50
+  br bb6(%49 : $Double), loc "Location.swift":40:13, scope 45 // id: %50
+
+// %51                                            // users: %53, %52
+bb3(%51 : $Bool):                                 // Preds: bb0
+  debug_value %51 : $Bool, let, name "x", loc "Location.swift":41:21, scope 46 // id: %52
+  %53 = struct_extract %51 : $Bool, #Bool._value, loc "Location.swift":42:16, scope 48 // user: %54
+  cond_br %53, bb4, bb5, loc "Location.swift":42:16, scope 48 // id: %54
+
+bb4:                                              // Preds: bb3
+  br bb6(%4 : $Double), loc "Location.swift":43:17, scope 49 // id: %55
+
+bb5:                                              // Preds: bb3
+  %56 = float_literal $Builtin.FPIEEE64, 0x0 // 0, loc "Location.swift":45:20, scope 47 // user: %57
+  %57 = struct $Double (%56 : $Builtin.FPIEEE64), loc "Location.swift":45:20, scope 47 // user: %58
+  br bb6(%57 : $Double), loc "Location.swift":45:13, scope 47 // id: %58
+
+// %59                                            // user: %60
+bb6(%59 : $Double):                               // Preds: bb5 bb4 bb2 bb1
+  return %59 : $Double, loc "Location.swift":47:5, scope 40 // id: %60
+}
+
+
+// sqrt
+sil [readnone] [clang sqrt] @sqrt : $@convention(c) (Double) -> Double
+
+sil_scope 50 {  parent @_TFsoi1pFTSdSd_Sd : $@convention(thin) (Double, Double) -> Double }
+
+// + infix(Double, Double) -> Double
+sil public_external [transparent] [fragile] @_TFsoi1pFTSdSd_Sd : $@convention(thin) (Double, Double) -> Double {
+// %0                                             // users: %4, %2
+// %1                                             // users: %5, %3
+bb0(%0 : $Double, %1 : $Double):
+  debug_value %0 : $Double, scope 50              // id: %2
+  debug_value %1 : $Double, scope 50              // id: %3
+  %4 = struct_extract %0 : $Double, #Double._value, scope 50 // user: %6
+  %5 = struct_extract %1 : $Double, #Double._value, scope 50 // user: %6
+  %6 = builtin "fadd_FPIEEE64"(%4 : $Builtin.FPIEEE64, %5 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, scope 50 // user: %7
+  %7 = struct $Double (%6 : $Builtin.FPIEEE64), scope 50 // user: %8
+  return %7 : $Double, scope 50                   // id: %8
+}
+
+sil_scope 51 {  parent @_TFSdCfSiSd : $@convention(method) (Int, @thin Double.Type) -> Double }
+
+// Double.init(Int) -> Double
+sil public_external [transparent] [fragile] @_TFSdCfSiSd : $@convention(method) (Int, @thin Double.Type) -> Double {
+// %0                                             // users: %3, %2
+bb0(%0 : $Int, %1 : $@thin Double.Type):
+  debug_value %0 : $Int, scope 51                 // id: %2
+  %3 = struct_extract %0 : $Int, #Int._value, scope 51 // user: %4
+  %4 = builtin "sitofp_Int64_FPIEEE64"(%3 : $Builtin.Int64) : $Builtin.FPIEEE64, scope 51 // user: %5
+  %5 = struct $Double (%4 : $Builtin.FPIEEE64), scope 51 // user: %6
+  return %5 : $Double, scope 51                   // id: %6
+}
+
+sil_scope 52 {  parent @_TFsoi1mFTSiSi_Si : $@convention(thin) (Int, Int) -> Int }
+
+// * infix(Int, Int) -> Int
+sil public_external [transparent] [fragile] @_TFsoi1mFTSiSi_Si : $@convention(thin) (Int, Int) -> Int {
+// %0                                             // users: %4, %2
+// %1                                             // users: %5, %3
+bb0(%0 : $Int, %1 : $Int):
+  debug_value %0 : $Int, scope 52                 // id: %2
+  debug_value %1 : $Int, scope 52                 // id: %3
+  %4 = struct_extract %0 : $Int, #Int._value, scope 52 // user: %7
+  %5 = struct_extract %1 : $Int, #Int._value, scope 52 // user: %7
+  %6 = integer_literal $Builtin.Int1, -1, scope 52 // user: %7
+  %7 = builtin "smul_with_overflow_Int64"(%4 : $Builtin.Int64, %5 : $Builtin.Int64, %6 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 52 // users: %9, %8
+  %8 = tuple_extract %7 : $(Builtin.Int64, Builtin.Int1), 0, scope 52 // users: %13, %10
+  %9 = tuple_extract %7 : $(Builtin.Int64, Builtin.Int1), 1, scope 52 // users: %12, %11
+  debug_value %8 : $Builtin.Int64, scope 52       // id: %10
+  debug_value %9 : $Builtin.Int1, scope 52        // id: %11
+  cond_fail %9 : $Builtin.Int1, scope 52          // id: %12
+  %13 = struct $Int (%8 : $Builtin.Int64), scope 52 // user: %14
+  return %13 : $Int, scope 52                     // id: %14
+}
+
+sil_scope 53 {  parent @_TFsoi1mFTSdSd_Sd : $@convention(thin) (Double, Double) -> Double }
+
+// * infix(Double, Double) -> Double
+sil public_external [transparent] [fragile] @_TFsoi1mFTSdSd_Sd : $@convention(thin) (Double, Double) -> Double {
+// %0                                             // users: %4, %2
+// %1                                             // users: %5, %3
+bb0(%0 : $Double, %1 : $Double):
+  debug_value %0 : $Double, scope 53              // id: %2
+  debug_value %1 : $Double, scope 53              // id: %3
+  %4 = struct_extract %0 : $Double, #Double._value, scope 53 // user: %6
+  %5 = struct_extract %1 : $Double, #Double._value, scope 53 // user: %6
+  %6 = builtin "fmul_FPIEEE64"(%4 : $Builtin.FPIEEE64, %5 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, scope 53 // user: %7
+  %7 = struct $Double (%6 : $Builtin.FPIEEE64), scope 53 // user: %8
+  return %7 : $Double, scope 53                   // id: %8
+}
+
+sil_scope 54 {  parent @_TFSdCfT22_builtinIntegerLiteralBi2048__Sd : $@convention(method) (Builtin.Int2048, @thin Double.Type) -> Double }
+
+// Double.init(_builtinIntegerLiteral : Builtin.Int2048) -> Double
+sil public_external [transparent] [fragile] @_TFSdCfT22_builtinIntegerLiteralBi2048__Sd : $@convention(method) (Builtin.Int2048, @thin Double.Type) -> Double {
+// %0                                             // users: %3, %2
+bb0(%0 : $Builtin.Int2048, %1 : $@thin Double.Type):
+  debug_value %0 : $Builtin.Int2048, scope 54     // id: %2
+  %3 = builtin "itofp_with_overflow_Int2048_FPIEEE64"(%0 : $Builtin.Int2048) : $Builtin.FPIEEE64, scope 54 // user: %4
+  %4 = struct $Double (%3 : $Builtin.FPIEEE64), scope 54 // user: %5
+  return %4 : $Double, scope 54                   // id: %5
+}
+
+sil_scope 55 { loc "Location.swift":50:17 parent @_TFV8Location8Location4wrapfT_CS_15LocationWrapper : $@convention(method) (@guaranteed Location) -> @owned LocationWrapper }
+sil_scope 56 { loc "Location.swift":52:5 parent 55 }
+
+// Location.wrap() -> LocationWrapper
+sil @_TFV8Location8Location4wrapfT_CS_15LocationWrapper : $@convention(method) (@guaranteed Location) -> @owned LocationWrapper {
+// %0                                             // users: %5, %4, %1
+bb0(%0 : $Location):
+  debug_value %0 : $Location, let, name "self", argno 1, loc "Location.swift":50:17, scope 55 // id: %1
+  // function_ref LocationWrapper.__allocating_init(location : Location) -> LocationWrapper
+  %2 = function_ref @_TFC8Location15LocationWrapperCfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @thick LocationWrapper.Type) -> @owned LocationWrapper, loc "Location.swift":51:16, scope 56 // user: %5
+  %3 = metatype $@thick LocationWrapper.Type, loc "Location.swift":51:16, scope 56 // user: %5
+  retain_value %0 : $Location, loc "Location.swift":51:42, scope 56 // id: %4
+  %5 = apply %2(%0, %3) : $@convention(method) (@owned Location, @thick LocationWrapper.Type) -> @owned LocationWrapper, loc "Location.swift":51:46, scope 56 // user: %6
+  return %5 : $LocationWrapper, loc "Location.swift":51:9, scope 56 // id: %6
+}
+
+sil_scope 57 { loc "Location.swift":87:5 parent @_TFC8Location15LocationWrapperCfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @thick LocationWrapper.Type) -> @owned LocationWrapper }
+
+// LocationWrapper.__allocating_init(location : Location) -> LocationWrapper
+sil private @_TFC8Location15LocationWrapperCfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @thick LocationWrapper.Type) -> @owned LocationWrapper {
+// %0                                             // user: %4
+bb0(%0 : $Location, %1 : $@thick LocationWrapper.Type):
+  %2 = alloc_ref [objc] $LocationWrapper, scope 57 // user: %4
+  // function_ref LocationWrapper.init(location : Location) -> LocationWrapper
+  %3 = function_ref @_TFC8Location15LocationWrappercfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @owned LocationWrapper) -> @owned LocationWrapper, scope 57 // user: %4
+  %4 = apply %3(%0, %2) : $@convention(method) (@owned Location, @owned LocationWrapper) -> @owned LocationWrapper, scope 57 // user: %5
+  return %4 : $LocationWrapper, scope 57          // id: %5
+}
+
+sil_scope 58 { loc "Location.swift":25:9 parent @_TFV8Location8Locationg10coordinateTOS_8PositionSd_ : $@convention(method) (@guaranteed Location) -> (Position, Double) }
+sil_scope 59 { loc "Location.swift":25:9 parent 58 }
+
+// Location.coordinate.getter
+sil hidden [transparent] @_TFV8Location8Locationg10coordinateTOS_8PositionSd_ : $@convention(method) (@guaranteed Location) -> (Position, Double) {
+// %0                                             // users: %2, %1
+bb0(%0 : $Location):
+  debug_value %0 : $Location, let, name "self", argno 1, loc "Location.swift":25:9, scope 58 // id: %1
+  %2 = struct_extract %0 : $Location, #Location.coordinate, scope 59 // users: %4, %3
+  %3 = tuple_extract %2 : $(Position, Double), 0, scope 59 // user: %5
+  %4 = tuple_extract %2 : $(Position, Double), 1, scope 59 // user: %5
+  %5 = tuple (%3 : $Position, %4 : $Double), loc "Location.swift":25:9, scope 59 // user: %6
+  return %5 : $(Position, Double), loc "Location.swift":25:9, scope 59 // id: %6
+}
+
+sil_scope 60 { loc "Location.swift":26:9 parent @_TFV8Location8Locationg4nameSS : $@convention(method) (@guaranteed Location) -> @owned String }
+sil_scope 61 { loc "Location.swift":26:9 parent 60 }
+
+// Location.name.getter
+sil hidden [transparent] @_TFV8Location8Locationg4nameSS : $@convention(method) (@guaranteed Location) -> @owned String {
+// %0                                             // users: %2, %1
+bb0(%0 : $Location):
+  debug_value %0 : $Location, let, name "self", argno 1, loc "Location.swift":26:9, scope 60 // id: %1
+  %2 = struct_extract %0 : $Location, #Location.name, scope 61 // users: %4, %3
+  retain_value %2 : $String, scope 61             // id: %3
+  return %2 : $String, loc "Location.swift":26:9, scope 61 // id: %4
+}
+
+sil_scope 62 { loc "Location.swift":55:13 parent @_TF8Location8midpointFzT1xTOS_8PositionSd_1yTS0_Sd__TS0_Sd_ : $@convention(thin) (Position, Double, Position, Double) -> (Position, Double, @error Error) }
+sil_scope 63 { loc "Location.swift":70:1 parent 62 }
+sil_scope 64 { loc "Location.swift":69:5 parent 63 }
+sil_scope 65 { loc "Location.swift":69:5 parent 64 }
+sil_scope 66 { loc "Location.swift":69:5 parent 65 }
+sil_scope 67 { loc "Location.swift":69:5 parent 66 }
+sil_scope 68 { loc "Location.swift":59:36 parent 67 }
+sil_scope 69 { loc "Location.swift":69:5 parent 65 }
+sil_scope 70 { loc "Location.swift":69:5 parent 69 }
+sil_scope 71 { loc "Location.swift":61:46 parent 70 }
+sil_scope 72 { loc "Location.swift":69:5 parent 65 }
+sil_scope 73 { loc "Location.swift":69:5 parent 72 }
+sil_scope 74 { loc "Location.swift":66:32 parent 73 }
+sil_scope 75 { loc "Location.swift":65:9 parent 74 }
+sil_scope 76 { loc "Location.swift":65:9 parent 75 }
+sil_scope 77 { loc "Location.swift":68:31 parent 63 }
+
+// midpoint(x : (Position, Double), y : (Position, Double)) throws -> (Position, Double)
+sil @_TF8Location8midpointFzT1xTOS_8PositionSd_1yTS0_Sd__TS0_Sd_ : $@convention(thin) (Position, Double, Position, Double) -> (Position, Double, @error Error) {
+// %0                                             // user: %4
+// %1                                             // user: %4
+// %2                                             // user: %6
+// %3                                             // user: %6
+bb0(%0 : $Position, %1 : $Double, %2 : $Position, %3 : $Double):
+  %4 = tuple (%0 : $Position, %1 : $Double), loc "Location.swift":55:22, scope 62 // users: %32, %31, %12, %11, %10, %9, %5
+  debug_value %4 : $(Position, Double), let, name "x", argno 1, loc "Location.swift":55:22, scope 62 // id: %5
+  %6 = tuple (%2 : $Position, %3 : $Double), loc "Location.swift":55:37, scope 62 // users: %34, %33, %20, %19, %18, %17, %7
+  debug_value %6 : $(Position, Double), let, name "y", argno 2, loc "Location.swift":55:37, scope 62 // id: %7
+  // function_ref sqrt
+  %8 = function_ref @sqrt : $@convention(c) (Double) -> Double, loc "Location.swift":56:20, scope 63 // user: %29
+  %9 = tuple_extract %4 : $(Position, Double), 0, loc "Location.swift":56:25, scope 63
+  %10 = tuple_extract %4 : $(Position, Double), 1, loc "Location.swift":56:25, scope 63 // user: %13
+  %11 = tuple_extract %4 : $(Position, Double), 0, loc "Location.swift":56:31, scope 63
+  %12 = tuple_extract %4 : $(Position, Double), 1, loc "Location.swift":56:31, scope 63 // user: %14
+  %13 = struct_extract %10 : $Double, #Double._value, loc "Location.swift":56:29, scope 63 // user: %15
+  %14 = struct_extract %12 : $Double, #Double._value, loc "Location.swift":56:29, scope 63 // user: %15
+  %15 = builtin "fmul_FPIEEE64"(%13 : $Builtin.FPIEEE64, %14 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":56:29, scope 63 // user: %16
+  %16 = struct $Double (%15 : $Builtin.FPIEEE64), loc "Location.swift":56:29, scope 63 // user: %25
+  %17 = tuple_extract %6 : $(Position, Double), 0, loc "Location.swift":56:37, scope 63
+  %18 = tuple_extract %6 : $(Position, Double), 1, loc "Location.swift":56:37, scope 63 // user: %21
+  %19 = tuple_extract %6 : $(Position, Double), 0, loc "Location.swift":56:43, scope 63
+  %20 = tuple_extract %6 : $(Position, Double), 1, loc "Location.swift":56:43, scope 63 // user: %22
+  %21 = struct_extract %18 : $Double, #Double._value, loc "Location.swift":56:41, scope 63 // user: %23
+  %22 = struct_extract %20 : $Double, #Double._value, loc "Location.swift":56:41, scope 63 // user: %23
+  %23 = builtin "fmul_FPIEEE64"(%21 : $Builtin.FPIEEE64, %22 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":56:41, scope 63 // user: %24
+  %24 = struct $Double (%23 : $Builtin.FPIEEE64), loc "Location.swift":56:41, scope 63 // user: %26
+  %25 = struct_extract %16 : $Double, #Double._value, loc "Location.swift":56:35, scope 63 // user: %27
+  %26 = struct_extract %24 : $Double, #Double._value, loc "Location.swift":56:35, scope 63 // user: %27
+  %27 = builtin "fadd_FPIEEE64"(%25 : $Builtin.FPIEEE64, %26 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":56:35, scope 63 // user: %28
+  %28 = struct $Double (%27 : $Builtin.FPIEEE64), loc "Location.swift":56:35, scope 63 // user: %29
+  %29 = apply %8(%28) : $@convention(c) (Double) -> Double, loc "Location.swift":56:46, scope 63 // users: %103, %77, %54, %30
+  debug_value %29 : $Double, let, name "midpoint", loc "Location.swift":56:9, scope 63 // id: %30
+  %31 = tuple_extract %4 : $(Position, Double), 0, loc "Location.swift":57:13, scope 63 // user: %35
+  %32 = tuple_extract %4 : $(Position, Double), 1, loc "Location.swift":57:13, scope 63
+  %33 = tuple_extract %6 : $(Position, Double), 0, loc "Location.swift":57:18, scope 63 // user: %35
+  %34 = tuple_extract %6 : $(Position, Double), 1, loc "Location.swift":57:18, scope 63
+  %35 = tuple (%31 : $Position, %33 : $Position), loc "Location.swift":57:12, scope 63 // users: %37, %36
+  %36 = tuple_extract %35 : $(Position, Position), 0, loc "Location.swift":58:10, scope 64 // users: %80, %57, %40
+  %37 = tuple_extract %35 : $(Position, Position), 1, loc "Location.swift":58:10, scope 64 // user: %38
+  switch_enum %37 : $Position, case #Position.A!enumelt.1: bb1, case #Position.B!enumelt.1: bb4, case #Position.C!enumelt.1: bb7, loc "Location.swift":58:22, scope 65 // id: %38
+
+// %39                                            // users: %46, %43
+bb1(%39 : $Int):                                  // Preds: bb0
+  switch_enum %36 : $Position, case #Position.A!enumelt.1: bb2, default bb3, loc "Location.swift":58:11, scope 66 // id: %40
+
+// %41                                            // users: %45, %42
+bb2(%41 : $Int):                                  // Preds: bb1
+  debug_value %41 : $Int, let, name "a", loc "Location.swift":58:18, scope 67 // id: %42
+  debug_value %39 : $Int, let, name "b", loc "Location.swift":58:29, scope 67 // id: %43
+  %44 = metatype $@thin Position.Type, loc "Location.swift":59:17, scope 68
+  %45 = struct_extract %41 : $Int, #Int._value, loc "Location.swift":59:22, scope 68 // user: %48
+  %46 = struct_extract %39 : $Int, #Int._value, loc "Location.swift":59:22, scope 68 // user: %48
+  %47 = integer_literal $Builtin.Int1, -1, loc "Location.swift":59:22, scope 68 // user: %48
+  %48 = builtin "ssub_with_overflow_Int64"(%45 : $Builtin.Int64, %46 : $Builtin.Int64, %47 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), loc "Location.swift":59:22, scope 68 // users: %50, %49
+  %49 = tuple_extract %48 : $(Builtin.Int64, Builtin.Int1), 0, loc "Location.swift":59:22, scope 68 // user: %52
+  %50 = tuple_extract %48 : $(Builtin.Int64, Builtin.Int1), 1, loc "Location.swift":59:22, scope 68 // user: %51
+  cond_fail %50 : $Builtin.Int1, loc "Location.swift":59:22, scope 68 // id: %51
+  %52 = struct $Int (%49 : $Builtin.Int64), loc "Location.swift":59:22, scope 68 // user: %53
+  %53 = enum $Position, #Position.A!enumelt.1, %52 : $Int, loc "Location.swift":59:18, scope 68 // user: %54
+  br bb13(%53 : $Position, %29 : $Double), loc "Location.swift":59:9, scope 68 // id: %54
+
+bb3:                                              // Preds: bb1
+  br bb12, loc "Location.swift":58:11, scope 66   // id: %55
+
+// %56                                            // users: %68, %67, %60
+bb4(%56 : $Double):                               // Preds: bb0
+  switch_enum %36 : $Position, case #Position.B!enumelt.1: bb5, default bb6, loc "Location.swift":60:11, scope 69 // id: %57
+
+// %58                                            // users: %64, %63, %59
+bb5(%58 : $Double):                               // Preds: bb4
+  debug_value %58 : $Double, let, name "a", loc "Location.swift":60:18, scope 70 // id: %59
+  debug_value %56 : $Double, let, name "b", loc "Location.swift":60:29, scope 70 // id: %60
+  %61 = metatype $@thin Position.Type, loc "Location.swift":61:17, scope 71
+  // function_ref sqrt
+  %62 = function_ref @sqrt : $@convention(c) (Double) -> Double, loc "Location.swift":61:20, scope 71 // user: %75
+  %63 = struct_extract %58 : $Double, #Double._value, loc "Location.swift":61:26, scope 71 // user: %65
+  %64 = struct_extract %58 : $Double, #Double._value, loc "Location.swift":61:26, scope 71 // user: %65
+  %65 = builtin "fmul_FPIEEE64"(%63 : $Builtin.FPIEEE64, %64 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":61:26, scope 71 // user: %66
+  %66 = struct $Double (%65 : $Builtin.FPIEEE64), loc "Location.swift":61:26, scope 71 // user: %71
+  %67 = struct_extract %56 : $Double, #Double._value, loc "Location.swift":61:32, scope 71 // user: %69
+  %68 = struct_extract %56 : $Double, #Double._value, loc "Location.swift":61:32, scope 71 // user: %69
+  %69 = builtin "fmul_FPIEEE64"(%67 : $Builtin.FPIEEE64, %68 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":61:32, scope 71 // user: %70
+  %70 = struct $Double (%69 : $Builtin.FPIEEE64), loc "Location.swift":61:32, scope 71 // user: %72
+  %71 = struct_extract %66 : $Double, #Double._value, loc "Location.swift":61:29, scope 71 // user: %73
+  %72 = struct_extract %70 : $Double, #Double._value, loc "Location.swift":61:29, scope 71 // user: %73
+  %73 = builtin "fadd_FPIEEE64"(%71 : $Builtin.FPIEEE64, %72 : $Builtin.FPIEEE64) : $Builtin.FPIEEE64, loc "Location.swift":61:29, scope 71 // user: %74
+  %74 = struct $Double (%73 : $Builtin.FPIEEE64), loc "Location.swift":61:29, scope 71 // user: %75
+  %75 = apply %62(%74) : $@convention(c) (Double) -> Double, loc "Location.swift":61:34, scope 71 // user: %76
+  %76 = enum $Position, #Position.B!enumelt.1, %75 : $Double, loc "Location.swift":61:18, scope 71 // user: %77
+  br bb13(%76 : $Position, %29 : $Double), loc "Location.swift":61:9, scope 71 // id: %77
+
+bb6:                                              // Preds: bb4
+  br bb12, loc "Location.swift":60:11, scope 69   // id: %78
+
+// %79                                            // users: %88, %83
+bb7(%79 : $Bool):                                 // Preds: bb0
+  switch_enum %36 : $Position, case #Position.C!enumelt.1: bb8, default bb11, loc "Location.swift":62:11, scope 72 // id: %80
+
+// %81                                            // users: %102, %86, %82
+bb8(%81 : $Bool):                                 // Preds: bb7
+  debug_value %81 : $Bool, let, name "a", loc "Location.swift":62:18, scope 73 // id: %82
+  debug_value %79 : $Bool, let, name "b", loc "Location.swift":62:29, scope 73 // id: %83
+  // function_ref != infix<A where ...> (A, A) -> Bool
+  %84 = function_ref @_TFsoi2neuRxs9EquatablerFTxx_Sb : $@convention(thin) <τ_0_0 where τ_0_0 : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool, loc "Location.swift":63:14, scope 75 // user: %89
+  %85 = alloc_stack $Bool, loc "Location.swift":63:12, scope 75 // users: %92, %89, %86
+  store %81 to %85 : $*Bool, loc "Location.swift":63:12, scope 75 // id: %86
+  %87 = alloc_stack $Bool, loc "Location.swift":63:17, scope 75 // users: %91, %89, %88
+  store %79 to %87 : $*Bool, loc "Location.swift":63:17, scope 75 // id: %88
+  %89 = apply %84<Bool>(%85, %87) : $@convention(thin) <τ_0_0 where τ_0_0 : Equatable> (@in τ_0_0, @in τ_0_0) -> Bool, loc "Location.swift":63:14, scope 75 // user: %90
+  %90 = struct_extract %89 : $Bool, #Bool._value, loc "Location.swift":63:17, scope 75 // user: %93
+  dealloc_stack %87 : $*Bool, loc "Location.swift":63:17, scope 75 // id: %91
+  dealloc_stack %85 : $*Bool, loc "Location.swift":63:17, scope 75 // id: %92
+  cond_br %90, bb9, bb10, loc "Location.swift":63:17, scope 75 // id: %93
+
+bb9:                                              // Preds: bb8
+  %94 = alloc_existential_box $Error, $CoordinateError, loc "Location.swift":64:35, scope 76 // users: %100, %99, %95
+  %95 = project_existential_box $CoordinateError in %94 : $Error, loc "Location.swift":64:35, scope 76 // user: %98
+  %96 = metatype $@thin CoordinateError.Type, loc "Location.swift":64:19, scope 76
+  %97 = enum $CoordinateError, #CoordinateError.CantExist!enumelt, loc "Location.swift":64:35, scope 76 // user: %98
+  store %97 to %95 : $*CoordinateError, loc "Location.swift":64:35, scope 76 // id: %98
+  %99 = builtin "willThrow"(%94 : $Error) : $(), loc "Location.swift":64:13, scope 76
+  br bb14(%94 : $Error), loc "Location.swift":64:13, scope 76 // id: %100
+
+bb10:                                             // Preds: bb8
+  %101 = metatype $@thin Position.Type, loc "Location.swift":66:17, scope 74
+  %102 = enum $Position, #Position.C!enumelt.1, %81 : $Bool, loc "Location.swift":66:18, scope 74 // user: %103
+  br bb13(%102 : $Position, %29 : $Double), loc "Location.swift":66:9, scope 74 // id: %103
+
+bb11:                                             // Preds: bb7
+  br bb12, loc "Location.swift":62:11, scope 72   // id: %104
+
+bb12:                                             // Preds: bb11 bb6 bb3
+  %105 = alloc_existential_box $Error, $CoordinateError, loc "Location.swift":68:31, scope 77 // users: %111, %110, %106
+  %106 = project_existential_box $CoordinateError in %105 : $Error, loc "Location.swift":68:31, scope 77 // user: %109
+  %107 = metatype $@thin CoordinateError.Type, loc "Location.swift":68:15, scope 77
+  %108 = enum $CoordinateError, #CoordinateError.WrongDimensions!enumelt, loc "Location.swift":68:31, scope 77 // user: %109
+  store %108 to %106 : $*CoordinateError, loc "Location.swift":68:31, scope 77 // id: %109
+  %110 = builtin "willThrow"(%105 : $Error) : $(), loc "Location.swift":68:9, scope 77
+  br bb14(%105 : $Error), loc "Location.swift":68:9, scope 77 // id: %111
+
+// %112                                           // user: %114
+// %113                                           // user: %114
+bb13(%112 : $Position, %113 : $Double):           // Preds: bb10 bb5 bb2
+  %114 = tuple (%112 : $Position, %113 : $Double), loc "Location.swift":55:13, scope 63 // user: %115
+  return %114 : $(Position, Double), loc "Location.swift":70:1, scope 63 // id: %115
+
+// %116                                           // user: %117
+bb14(%116 : $Error):                              // Preds: bb12 bb9
+  throw %116 : $Error, loc "Location.swift":55:13, scope 63 // id: %117
+}
+
+sil_scope 78 {  parent @_TFsoi1sFTSiSi_Si : $@convention(thin) (Int, Int) -> Int }
+
+// - infix(Int, Int) -> Int
+sil public_external [transparent] [fragile] @_TFsoi1sFTSiSi_Si : $@convention(thin) (Int, Int) -> Int {
+// %0                                             // users: %4, %2
+// %1                                             // users: %5, %3
+bb0(%0 : $Int, %1 : $Int):
+  debug_value %0 : $Int, scope 78                 // id: %2
+  debug_value %1 : $Int, scope 78                 // id: %3
+  %4 = struct_extract %0 : $Int, #Int._value, scope 78 // user: %7
+  %5 = struct_extract %1 : $Int, #Int._value, scope 78 // user: %7
+  %6 = integer_literal $Builtin.Int1, -1, scope 78 // user: %7
+  %7 = builtin "ssub_with_overflow_Int64"(%4 : $Builtin.Int64, %5 : $Builtin.Int64, %6 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 78 // users: %9, %8
+  %8 = tuple_extract %7 : $(Builtin.Int64, Builtin.Int1), 0, scope 78 // users: %13, %10
+  %9 = tuple_extract %7 : $(Builtin.Int64, Builtin.Int1), 1, scope 78 // users: %12, %11
+  debug_value %8 : $Builtin.Int64, scope 78       // id: %10
+  debug_value %9 : $Builtin.Int1, scope 78        // id: %11
+  cond_fail %9 : $Builtin.Int1, scope 78          // id: %12
+  %13 = struct $Int (%8 : $Builtin.Int64), scope 78 // user: %14
+  return %13 : $Int, scope 78                     // id: %14
+}
+
+
+// != infix<A where ...> (A, A) -> Bool
+sil [fragile] @_TFsoi2neuRxs9EquatablerFTxx_Sb : $@convention(thin) <T where T : Equatable> (@in T, @in T) -> Bool
+
+sil_scope 79 { loc "Location.swift":76:34 parent @_TFC8Location15LocationWrapperg10coordinateTOS_8PositionSd_ : $@convention(method) (@guaranteed LocationWrapper) -> (Position, Double) }
+sil_scope 80 { loc "Location.swift":76:72 parent 79 }
+
+// LocationWrapper.coordinate.getter
+sil hidden @_TFC8Location15LocationWrapperg10coordinateTOS_8PositionSd_ : $@convention(method) (@guaranteed LocationWrapper) -> (Position, Double) {
+// %0                                             // users: %2, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":76:34, scope 79 // id: %1
+  %2 = ref_element_addr %0 : $LocationWrapper, #LocationWrapper.location, loc "Location.swift":76:52, scope 80 // user: %3
+  %3 = load %2 : $*Location, loc "Location.swift":76:52, scope 80 // user: %4
+  %4 = struct_extract %3 : $Location, #Location.coordinate, loc "Location.swift":76:61, scope 80 // users: %6, %5
+  %5 = tuple_extract %4 : $(Position, Double), 0, loc "Location.swift":76:61, scope 80 // user: %7
+  %6 = tuple_extract %4 : $(Position, Double), 1, loc "Location.swift":76:61, scope 80 // user: %7
+  %7 = tuple (%5 : $Position, %6 : $Double), loc "Location.swift":76:34, scope 80 // user: %8
+  return %7 : $(Position, Double), loc "Location.swift":76:40, scope 80 // id: %8
+}
+
+sil_scope 81 {  parent @_TToFC8Location15LocationWrapperg4nameSS : $@convention(objc_method) (LocationWrapper) -> @autoreleased NSString }
+
+// @objc LocationWrapper.name.getter
+sil hidden [thunk] @_TToFC8Location15LocationWrapperg4nameSS : $@convention(objc_method) (LocationWrapper) -> @autoreleased NSString {
+// %0                                             // users: %4, %3, %1
+bb0(%0 : $LocationWrapper):
+  strong_retain %0 : $LocationWrapper, scope 81   // id: %1
+  // function_ref LocationWrapper.name.getter
+  %2 = function_ref @_TFC8Location15LocationWrapperg4nameSS : $@convention(method) (@guaranteed LocationWrapper) -> @owned String, scope 81 // user: %3
+  %3 = apply %2(%0) : $@convention(method) (@guaranteed LocationWrapper) -> @owned String, scope 81 // users: %7, %6
+  strong_release %0 : $LocationWrapper, scope 81  // id: %4
+  // function_ref String._bridgeToObjectiveC() -> NSString
+  %5 = function_ref @_TFE10FoundationSS19_bridgeToObjectiveCfT_CSo8NSString : $@convention(method) (@guaranteed String) -> @owned NSString, scope 81 // user: %6
+  %6 = apply %5(%3) : $@convention(method) (@guaranteed String) -> @owned NSString, scope 81 // user: %8
+  release_value %3 : $String, scope 81            // id: %7
+  return %6 : $NSString, scope 81                 // id: %8
+}
+
+sil_scope 82 { loc "Location.swift":77:24 parent @_TFC8Location15LocationWrapperg4nameSS : $@convention(method) (@guaranteed LocationWrapper) -> @owned String }
+sil_scope 83 { loc "Location.swift":77:51 parent 82 }
+
+// LocationWrapper.name.getter
+sil hidden @_TFC8Location15LocationWrapperg4nameSS : $@convention(method) (@guaranteed LocationWrapper) -> @owned String {
+// %0                                             // users: %2, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":77:24, scope 82 // id: %1
+  %2 = ref_element_addr %0 : $LocationWrapper, #LocationWrapper.location, loc "Location.swift":77:37, scope 83 // user: %3
+  %3 = load %2 : $*Location, loc "Location.swift":77:37, scope 83 // user: %4
+  %4 = struct_extract %3 : $Location, #Location.name, loc "Location.swift":77:46, scope 83 // users: %6, %5
+  retain_value %4 : $String, loc "Location.swift":77:46, scope 83 // id: %5
+  return %4 : $String, loc "Location.swift":77:30, scope 83 // id: %6
+}
+
+
+// String._bridgeToObjectiveC() -> NSString
+sil [_semantics "convertToObjectiveC"] @_TFE10FoundationSS19_bridgeToObjectiveCfT_CSo8NSString : $@convention(method) (@guaranteed String) -> @owned NSString
+
+sil_scope 84 { loc "Location.swift":82:5 parent @_TFC8Location15LocationWrappercfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @owned LocationWrapper) -> @owned LocationWrapper }
+sil_scope 85 { loc "Location.swift":84:5 parent 84 }
+
+// LocationWrapper.init(coordinate : (Position, Double), name : String) -> LocationWrapper
+sil @_TFC8Location15LocationWrappercfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @owned LocationWrapper) -> @owned LocationWrapper {
+// %0                                             // user: %5
+// %1                                             // user: %5
+// %2                                             // users: %23, %14, %13, %7
+// %3                                             // users: %17, %18, %15, %8
+bb0(%0 : $Position, %1 : $Double, %2 : $String, %3 : $LocationWrapper):
+  %4 = alloc_stack $LocationWrapper, let, name "self", loc "Location.swift":82:5, scope 84 // users: %8, %21, %25
+  %5 = tuple (%0 : $Position, %1 : $Double), loc "Location.swift":82:10, scope 84 // users: %12, %11, %6
+  debug_value %5 : $(Position, Double), let, name "coordinate", argno 1, loc "Location.swift":82:10, scope 84 // id: %6
+  debug_value %2 : $String, let, name "name", argno 2, loc "Location.swift":82:34, scope 84 // id: %7
+  store %3 to %4 : $*LocationWrapper, loc "Location.swift":82:5, scope 84 // id: %8
+  // function_ref Location.init(coordinate : (Position, Double), name : String) -> Location
+  %9 = function_ref @_TFV8Location8LocationCfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @thin Location.Type) -> @owned Location, loc "Location.swift":83:25, scope 85 // user: %14
+  %10 = metatype $@thin Location.Type, loc "Location.swift":83:25, scope 85 // user: %14
+  %11 = tuple_extract %5 : $(Position, Double), 0, loc "Location.swift":83:46, scope 85 // user: %14
+  %12 = tuple_extract %5 : $(Position, Double), 1, loc "Location.swift":83:46, scope 85 // user: %14
+  retain_value %2 : $String, loc "Location.swift":83:64, scope 85 // id: %13
+  %14 = apply %9(%11, %12, %2, %10) : $@convention(method) (Position, Double, @owned String, @thin Location.Type) -> @owned Location, loc "Location.swift":83:68, scope 85 // user: %16
+  %15 = ref_element_addr %3 : $LocationWrapper, #LocationWrapper.location, loc "Location.swift":83:23, scope 85 // user: %16
+  store %14 to %15 : $*Location, loc "Location.swift":83:23, scope 85 // id: %16
+  %17 = upcast %3 : $LocationWrapper to $NSObject, scope 85 // user: %19
+  %18 = super_method [volatile] %3 : $LocationWrapper, #NSObject.init!initializer.1.foreign : (NSObject.Type) -> () -> NSObject , $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 85 // user: %19
+  %19 = apply %18(%17) : $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 85 // user: %20
+  %20 = unchecked_ref_cast %19 : $NSObject to $LocationWrapper, scope 85 // users: %24, %22, %26, %21
+  store %20 to %4 : $*LocationWrapper, scope 85   // id: %21
+  strong_retain %20 : $LocationWrapper, loc "Location.swift":84:5, scope 85 // id: %22
+  release_value %2 : $String, loc "Location.swift":84:5, scope 85 // id: %23
+  strong_release %20 : $LocationWrapper, loc "Location.swift":82:5, scope 85 // id: %24
+  dealloc_stack %4 : $*LocationWrapper, loc "Location.swift":82:5, scope 85 // id: %25
+  return %20 : $LocationWrapper, loc "Location.swift":84:5, scope 85 // id: %26
+}
+
+sil_scope 86 { loc "Location.swift":82:5 parent @_TFC8Location15LocationWrapperCfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @thick LocationWrapper.Type) -> @owned LocationWrapper }
+
+// LocationWrapper.__allocating_init(coordinate : (Position, Double), name : String) -> LocationWrapper
+sil @_TFC8Location15LocationWrapperCfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @thick LocationWrapper.Type) -> @owned LocationWrapper {
+// %0                                             // user: %6
+// %1                                             // user: %6
+// %2                                             // user: %6
+bb0(%0 : $Position, %1 : $Double, %2 : $String, %3 : $@thick LocationWrapper.Type):
+  %4 = alloc_ref [objc] $LocationWrapper, scope 86 // user: %6
+  // function_ref LocationWrapper.init(coordinate : (Position, Double), name : String) -> LocationWrapper
+  %5 = function_ref @_TFC8Location15LocationWrappercfT10coordinateTOS_8PositionSd_4nameSS_S0_ : $@convention(method) (Position, Double, @owned String, @owned LocationWrapper) -> @owned LocationWrapper, scope 86 // user: %6
+  %6 = apply %5(%0, %1, %2, %4) : $@convention(method) (Position, Double, @owned String, @owned LocationWrapper) -> @owned LocationWrapper, scope 86 // user: %7
+  return %6 : $LocationWrapper, scope 86          // id: %7
+}
+
+sil_scope 87 { loc "Location.swift":87:5 parent @_TFC8Location15LocationWrappercfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @owned LocationWrapper) -> @owned LocationWrapper }
+sil_scope 88 { loc "Location.swift":89:5 parent 87 }
+
+// LocationWrapper.init(location : Location) -> LocationWrapper
+sil private @_TFC8Location15LocationWrappercfT8locationVS_8Location_S0_ : $@convention(method) (@owned Location, @owned LocationWrapper) -> @owned LocationWrapper {
+// %0                                             // users: %7, %14, %5, %3
+// %1                                             // users: %8, %9, %6, %4
+bb0(%0 : $Location, %1 : $LocationWrapper):
+  %2 = alloc_stack $LocationWrapper, let, name "self", loc "Location.swift":87:5, scope 87 // users: %4, %12, %16
+  debug_value %0 : $Location, let, name "location", argno 1, loc "Location.swift":87:10, scope 87 // id: %3
+  store %1 to %2 : $*LocationWrapper, loc "Location.swift":87:5, scope 87 // id: %4
+  retain_value %0 : $Location, loc "Location.swift":88:25, scope 88 // id: %5
+  %6 = ref_element_addr %1 : $LocationWrapper, #LocationWrapper.location, loc "Location.swift":88:23, scope 88 // user: %7
+  store %0 to %6 : $*Location, loc "Location.swift":88:23, scope 88 // id: %7
+  %8 = upcast %1 : $LocationWrapper to $NSObject, scope 88 // user: %10
+  %9 = super_method [volatile] %1 : $LocationWrapper, #NSObject.init!initializer.1.foreign : (NSObject.Type) -> () -> NSObject , $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 88 // user: %10
+  %10 = apply %9(%8) : $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 88 // user: %11
+  %11 = unchecked_ref_cast %10 : $NSObject to $LocationWrapper, scope 88 // users: %15, %13, %17, %12
+  store %11 to %2 : $*LocationWrapper, scope 88   // id: %12
+  strong_retain %11 : $LocationWrapper, loc "Location.swift":89:5, scope 88 // id: %13
+  release_value %0 : $Location, loc "Location.swift":89:5, scope 88 // id: %14
+  strong_release %11 : $LocationWrapper, loc "Location.swift":87:5, scope 88 // id: %15
+  dealloc_stack %2 : $*LocationWrapper, loc "Location.swift":87:5, scope 88 // id: %16
+  return %11 : $LocationWrapper, loc "Location.swift":89:5, scope 88 // id: %17
+}
+
+sil_scope 89 { loc "Location.swift":94:17 parent @_TFC8Location15LocationWrapper6lengthfT_Sd : $@convention(method) (@guaranteed LocationWrapper) -> Double }
+sil_scope 90 { loc "Location.swift":94:68 parent 89 }
+
+// LocationWrapper.length() -> Double
+sil @_TFC8Location15LocationWrapper6lengthfT_Sd : $@convention(method) (@guaranteed LocationWrapper) -> Double {
+// %0                                             // users: %3, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":94:17, scope 89 // id: %1
+  // function_ref Location.length() -> Double
+  %2 = function_ref @_TFV8Location8Location6lengthfT_Sd : $@convention(method) (@guaranteed Location) -> Double, loc "Location.swift":94:59, scope 90 // user: %5
+  %3 = ref_element_addr %0 : $LocationWrapper, #LocationWrapper.location, loc "Location.swift":94:50, scope 90 // user: %4
+  %4 = load %3 : $*Location, loc "Location.swift":94:50, scope 90 // user: %5
+  %5 = apply %2(%4) : $@convention(method) (@guaranteed Location) -> Double, loc "Location.swift":94:66, scope 90 // user: %6
+  return %5 : $Double, loc "Location.swift":94:38, scope 90 // id: %6
+}
+
+sil_scope 91 { loc "Location.swift":94:17 parent @_TToFC8Location15LocationWrapper6lengthfT_Sd : $@convention(objc_method) (LocationWrapper) -> Double }
+
+// @objc LocationWrapper.length() -> Double
+sil [thunk] @_TToFC8Location15LocationWrapper6lengthfT_Sd : $@convention(objc_method) (LocationWrapper) -> Double {
+// %0                                             // users: %4, %3, %1
+bb0(%0 : $LocationWrapper):
+  strong_retain %0 : $LocationWrapper, scope 91   // id: %1
+  // function_ref LocationWrapper.length() -> Double
+  %2 = function_ref @_TFC8Location15LocationWrapper6lengthfT_Sd : $@convention(method) (@guaranteed LocationWrapper) -> Double, scope 91 // user: %3
+  %3 = apply %2(%0) : $@convention(method) (@guaranteed LocationWrapper) -> Double, scope 91 // user: %5
+  strong_release %0 : $LocationWrapper, scope 91  // id: %4
+  return %3 : $Double, scope 91                   // id: %5
+}
+
+sil_scope 92 { loc "Location.swift":96:23 parent @_TFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool }
+sil_scope 93 { loc "Location.swift":98:5 parent 92 }
+
+// LocationWrapper.objcTest() -> Bool
+sil @_TFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool {
+// %0                                             // user: %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":96:23, scope 92 // id: %1
+  %2 = integer_literal $Builtin.Int1, -1, loc "Location.swift":97:16, scope 93 // user: %3
+  %3 = struct $Bool (%2 : $Builtin.Int1), loc "Location.swift":97:16, scope 93 // user: %4
+  return %3 : $Bool, loc "Location.swift":97:9, scope 93 // id: %4
+}
+
+sil_scope 94 {  parent @_TFSbCfT22_builtinBooleanLiteralBi1__Sb : $@convention(method) (Builtin.Int1, @thin Bool.Type) -> Bool }
+
+// Bool.init(_builtinBooleanLiteral : Builtin.Int1) -> Bool
+sil public_external [transparent] [fragile] @_TFSbCfT22_builtinBooleanLiteralBi1__Sb : $@convention(method) (Builtin.Int1, @thin Bool.Type) -> Bool {
+// %0                                             // users: %3, %2
+bb0(%0 : $Builtin.Int1, %1 : $@thin Bool.Type):
+  debug_value %0 : $Builtin.Int1, scope 94        // id: %2
+  %3 = struct $Bool (%0 : $Builtin.Int1), scope 94 // user: %4
+  return %3 : $Bool, scope 94                     // id: %4
+}
+
+sil_scope 95 { loc "Location.swift":96:23 parent @_TToFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(objc_method) (LocationWrapper) -> ObjCBool }
+
+// @objc LocationWrapper.objcTest() -> Bool
+sil [thunk] @_TToFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(objc_method) (LocationWrapper) -> ObjCBool {
+// %0                                             // users: %4, %3, %1
+bb0(%0 : $LocationWrapper):
+  strong_retain %0 : $LocationWrapper, scope 95   // id: %1
+  // function_ref LocationWrapper.objcTest() -> Bool
+  %2 = function_ref @_TFC8Location15LocationWrapper8objcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool, scope 95 // user: %3
+  %3 = apply %2(%0) : $@convention(method) (@guaranteed LocationWrapper) -> Bool, scope 95 // user: %6
+  strong_release %0 : $LocationWrapper, scope 95  // id: %4
+  // function_ref _convertBoolToObjCBool(Bool) -> ObjCBool
+  %5 = function_ref @_TF10ObjectiveC22_convertBoolToObjCBoolFSbVS_8ObjCBool : $@convention(thin) (Bool) -> ObjCBool, scope 95 // user: %6
+  %6 = apply %5(%3) : $@convention(thin) (Bool) -> ObjCBool, scope 95 // user: %7
+  return %6 : $ObjCBool, scope 95                 // id: %7
+}
+
+
+// _convertBoolToObjCBool(Bool) -> ObjCBool
+sil @_TF10ObjectiveC22_convertBoolToObjCBoolFSbVS_8ObjCBool : $@convention(thin) (Bool) -> ObjCBool
+
+sil_scope 96 { loc "Location.swift":100:26 parent @_TFC8Location15LocationWrapper11nonobjcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool }
+sil_scope 97 { loc "Location.swift":102:5 parent 96 }
+
+// LocationWrapper.nonobjcTest() -> Bool
+sil @_TFC8Location15LocationWrapper11nonobjcTestfT_Sb : $@convention(method) (@guaranteed LocationWrapper) -> Bool {
+// %0                                             // user: %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":100:26, scope 96 // id: %1
+  %2 = integer_literal $Builtin.Int1, -1, loc "Location.swift":101:16, scope 97 // user: %3
+  %3 = struct $Bool (%2 : $Builtin.Int1), loc "Location.swift":101:16, scope 97 // user: %4
+  return %3 : $Bool, loc "Location.swift":101:9, scope 97 // id: %4
+}
+
+sil_scope 98 { loc "Location.swift":74:14 parent @_TFC8Location15LocationWrapperD : $@convention(method) (@owned LocationWrapper) -> () }
+sil_scope 99 { loc "Location.swift":74:14 parent 98 }
+
+// LocationWrapper.__deallocating_deinit
+sil @_TFC8Location15LocationWrapperD : $@convention(method) (@owned LocationWrapper) -> () {
+// %0                                             // users: %3, %2, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":74:14, scope 98 // id: %1
+  %2 = super_method %0 : $LocationWrapper, #NSObject.deinit!deallocator.foreign : (NSObject) -> () -> () , $@convention(objc_method) (NSObject) -> (), scope 99 // user: %4
+  %3 = upcast %0 : $LocationWrapper to $NSObject, scope 99 // user: %4
+  %4 = apply %2(%3) : $@convention(objc_method) (NSObject) -> (), scope 99
+  %5 = tuple (), scope 99                         // user: %6
+  return %5 : $(), scope 99                       // id: %6
+}
+
+sil_scope 100 { loc "Location.swift":74:14 parent @_TToFC8Location15LocationWrapperE : $@convention(objc_method) (LocationWrapper) -> () }
+
+// @objc LocationWrapper.__ivar_destroyer
+sil @_TToFC8Location15LocationWrapperE : $@convention(objc_method) (LocationWrapper) -> () {
+// %0                                             // users: %2, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":74:14, scope 100 // id: %1
+  %2 = ref_element_addr %0 : $LocationWrapper, #LocationWrapper.location, scope 100 // user: %3
+  destroy_addr %2 : $*Location, scope 100         // id: %3
+  %4 = tuple (), scope 100                        // user: %5
+  return %4 : $(), scope 100                      // id: %5
+}
+
+sil_scope 101 { loc "Location.swift":75:18 parent @_TFC8Location15LocationWrapperg8locationVS_8Location : $@convention(method) (@guaranteed LocationWrapper) -> @owned Location }
+sil_scope 102 { loc "Location.swift":75:18 parent 101 }
+
+// LocationWrapper.location.getter
+sil hidden [transparent] @_TFC8Location15LocationWrapperg8locationVS_8Location : $@convention(method) (@guaranteed LocationWrapper) -> @owned Location {
+// %0                                             // users: %2, %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", argno 1, loc "Location.swift":75:18, scope 101 // id: %1
+  %2 = ref_element_addr %0 : $LocationWrapper, #LocationWrapper.location, scope 102 // user: %3
+  %3 = load %2 : $*Location, scope 102            // users: %5, %4
+  retain_value %3 : $Location, scope 102          // id: %4
+  return %3 : $Location, loc "Location.swift":75:18, scope 102 // id: %5
+}
+
+sil_scope 103 { loc "Location.swift":74:41 parent @_TFC8Location15LocationWrappercfT_S0_ : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper }
+sil_scope 104 {  parent 103 }
+
+// LocationWrapper.init() -> LocationWrapper
+sil @_TFC8Location15LocationWrappercfT_S0_ : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper {
+// %0                                             // user: %1
+bb0(%0 : $LocationWrapper):
+  debug_value %0 : $LocationWrapper, let, name "self", scope 103 // id: %1
+  %2 = string_literal utf8 "Location.LocationWrapper", loc "Location.swift":74:14, scope 104 // user: %7
+  %3 = integer_literal $Builtin.Word, 24, loc "Location.swift":74:14, scope 104 // user: %8
+  br bb1, loc "Location.swift":74:14, scope 104   // id: %4
+
+bb1:                                              // Preds: bb0
+  %5 = integer_literal $Builtin.Int8, 2, loc "Location.swift":74:14, scope 104 // user: %8
+  br bb2, loc "Location.swift":74:14, scope 104   // id: %6
+
+bb2:                                              // Preds: bb1
+  %7 = builtin "ptrtoint_Word"(%2 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":74:14, scope 104 // user: %8
+  %8 = struct $StaticString (%7 : $Builtin.Word, %3 : $Builtin.Word, %5 : $Builtin.Int8), loc "Location.swift":74:14, scope 104 // user: %35
+  br bb3, loc "Location.swift":74:14, scope 104   // id: %9
+
+bb3:                                              // Preds: bb2
+  %10 = string_literal utf8 "init()", loc "Location.swift":74:14, scope 104 // user: %15
+  %11 = integer_literal $Builtin.Word, 6, loc "Location.swift":74:14, scope 104 // user: %16
+  br bb4, loc "Location.swift":74:14, scope 104   // id: %12
+
+bb4:                                              // Preds: bb3
+  %13 = integer_literal $Builtin.Int8, 2, loc "Location.swift":74:14, scope 104 // user: %16
+  br bb5, loc "Location.swift":74:14, scope 104   // id: %14
+
+bb5:                                              // Preds: bb4
+  %15 = builtin "ptrtoint_Word"(%10 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":74:14, scope 104 // user: %16
+  %16 = struct $StaticString (%15 : $Builtin.Word, %11 : $Builtin.Word, %13 : $Builtin.Int8), loc "Location.swift":74:14, scope 104 // user: %32
+  br bb6, loc "Location.swift":74:14, scope 104   // id: %17
+
+bb6:                                              // Preds: bb5
+  %18 = string_literal utf8 "Location.swift", loc "Location.swift":74:14, scope 104 // user: %23
+  %19 = integer_literal $Builtin.Word, 14, loc "Location.swift":74:14, scope 104 // user: %24
+  br bb7, loc "Location.swift":74:14, scope 104   // id: %20
+
+bb7:                                              // Preds: bb6
+  %21 = integer_literal $Builtin.Int8, 2, loc "Location.swift":74:14, scope 104 // user: %24
+  br bb8, loc "Location.swift":74:14, scope 104   // id: %22
+
+bb8:                                              // Preds: bb7
+  %23 = builtin "ptrtoint_Word"(%18 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":74:14, scope 104 // user: %24
+  %24 = struct $StaticString (%23 : $Builtin.Word, %19 : $Builtin.Word, %21 : $Builtin.Int8), loc "Location.swift":74:14, scope 104 // user: %32
+  br bb9, loc "Location.swift":74:14, scope 104   // id: %25
+
+bb9:                                              // Preds: bb8
+  %26 = integer_literal $Builtin.Int64, 74, loc "Location.swift":74:14, scope 104 // user: %27
+  %27 = struct $UInt (%26 : $Builtin.Int64), loc "Location.swift":74:14, scope 104 // user: %32
+  %28 = integer_literal $Builtin.Int64, 14, loc "Location.swift":74:14, scope 104 // user: %29
+  %29 = struct $UInt (%28 : $Builtin.Int64), loc "Location.swift":74:14, scope 104 // user: %32
+  br bb10, loc "Location.swift":74:14, scope 104  // id: %30
+
+bb10:                                             // Preds: bb9
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1)
+  %31 = function_ref @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> (), loc "Location.swift":74:14, scope 104 // user: %32
+  %32 = partial_apply %31(%16, %24, %27, %29) : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> (), loc "Location.swift":74:14, scope 104 // user: %35
+  // function_ref specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %33 = function_ref @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), loc "Location.swift":74:14, scope 104 // user: %35
+  %34 = alloc_stack $(), loc "Location.swift":74:14, scope 104 // users: %36, %35
+  %35 = apply %33(%34, %8, %32) : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), loc "Location.swift":74:14, scope 104
+  dealloc_stack %34 : $*(), loc "Location.swift":74:14, scope 104 // id: %36
+  br bb11, loc "Location.swift":74:14, scope 104  // id: %37
+
+bb11:                                             // Preds: bb10
+  %38 = builtin "int_trap"() : $Never, loc "Location.swift":74:14, scope 104
+  unreachable, scope 103                          // id: %39
+}
+
+sil_scope 105 { loc "Location.swift":74:41 parent @_TFC8Location15LocationWrapperCfT_S0_ : $@convention(method) (@thick LocationWrapper.Type) -> @owned LocationWrapper }
+
+// LocationWrapper.__allocating_init() -> LocationWrapper
+sil @_TFC8Location15LocationWrapperCfT_S0_ : $@convention(method) (@thick LocationWrapper.Type) -> @owned LocationWrapper {
+bb0(%0 : $@thick LocationWrapper.Type):
+  %1 = alloc_ref [objc] $LocationWrapper, scope 105 // user: %3
+  // function_ref LocationWrapper.init() -> LocationWrapper
+  %2 = function_ref @_TFC8Location15LocationWrappercfT_S0_ : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper, scope 105 // user: %3
+  %3 = apply %2(%1) : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper, scope 105 // user: %4
+  return %3 : $LocationWrapper, scope 105         // id: %4
+}
+
+sil_scope 106 {  parent @_TFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt) -> Never }
+
+// _unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never
+sil public_external [transparent] [fragile] @_TFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt) -> Never {
+// %0                                             // users: %15, %5
+// %1                                             // users: %12, %6
+// %2                                             // users: %12, %7
+// %3                                             // users: %12, %8
+// %4                                             // users: %12, %9
+bb0(%0 : $StaticString, %1 : $StaticString, %2 : $StaticString, %3 : $UInt, %4 : $UInt):
+  debug_value %0 : $StaticString, scope 106       // id: %5
+  debug_value %1 : $StaticString, scope 106       // id: %6
+  debug_value %2 : $StaticString, scope 106       // id: %7
+  debug_value %3 : $UInt, scope 106               // id: %8
+  debug_value %4 : $UInt, scope 106               // id: %9
+  br bb1, scope 106                               // id: %10
+
+bb1:                                              // Preds: bb0
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1)
+  %11 = function_ref @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> (), scope 106 // user: %12
+  %12 = partial_apply %11(%1, %2, %3, %4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> (), scope 106 // user: %15
+  // function_ref specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %13 = function_ref @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 106 // user: %15
+  %14 = alloc_stack $(), scope 106                // users: %16, %15
+  %15 = apply %13(%14, %0, %12) : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 106
+  dealloc_stack %14 : $*(), scope 106             // id: %16
+  br bb2, scope 106                               // id: %17
+
+bb2:                                              // Preds: bb1
+  %18 = builtin "int_trap"() : $Never, scope 106
+  unreachable, scope 106                          // id: %19
+}
+
+sil_scope 107 {  parent @_TFVs12StaticStringCfT21_builtinStringLiteralBp17utf8CodeUnitCountBw7isASCIIBi1__S_ : $@convention(method) (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin StaticString.Type) -> StaticString }
+
+// StaticString.init(_builtinStringLiteral : Builtin.RawPointer, utf8CodeUnitCount : Builtin.Word, isASCII : Builtin.Int1) -> StaticString
+sil public_external [transparent] [fragile] [readonly] @_TFVs12StaticStringCfT21_builtinStringLiteralBp17utf8CodeUnitCountBw7isASCIIBi1__S_ : $@convention(method) (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin StaticString.Type) -> StaticString {
+// %0                                             // users: %13, %4
+// %1                                             // users: %14, %5
+// %2                                             // users: %7, %6
+bb0(%0 : $Builtin.RawPointer, %1 : $Builtin.Word, %2 : $Builtin.Int1, %3 : $@thin StaticString.Type):
+  debug_value %0 : $Builtin.RawPointer, scope 107 // id: %4
+  debug_value %1 : $Builtin.Word, scope 107       // id: %5
+  debug_value %2 : $Builtin.Int1, scope 107       // id: %6
+  cond_br %2, bb2, bb1, scope 107                 // id: %7
+
+bb1:                                              // Preds: bb0
+  %8 = integer_literal $Builtin.Int8, 0, scope 107 // user: %9
+  br bb3(%8 : $Builtin.Int8), scope 107           // id: %9
+
+bb2:                                              // Preds: bb0
+  %10 = integer_literal $Builtin.Int8, 2, scope 107 // user: %11
+  br bb3(%10 : $Builtin.Int8), scope 107          // id: %11
+
+// %12                                            // user: %14
+bb3(%12 : $Builtin.Int8):                         // Preds: bb2 bb1
+  %13 = builtin "ptrtoint_Word"(%0 : $Builtin.RawPointer) : $Builtin.Word, scope 107 // user: %14
+  %14 = struct $StaticString (%13 : $Builtin.Word, %1 : $Builtin.Word, %12 : $Builtin.Int8), scope 107 // user: %15
+  return %14 : $StaticString, scope 107           // id: %15
+}
+
+sil_scope 108 {  parent @_TFSuCfT22_builtinIntegerLiteralBi2048__Su : $@convention(method) (Builtin.Int2048, @thin UInt.Type) -> UInt }
+
+// UInt.init(_builtinIntegerLiteral : Builtin.Int2048) -> UInt
+sil public_external [transparent] [fragile] @_TFSuCfT22_builtinIntegerLiteralBi2048__Su : $@convention(method) (Builtin.Int2048, @thin UInt.Type) -> UInt {
+// %0                                             // users: %3, %2
+bb0(%0 : $Builtin.Int2048, %1 : $@thin UInt.Type):
+  debug_value %0 : $Builtin.Int2048, scope 108    // id: %2
+  %3 = builtin "s_to_u_checked_trunc_Int2048_Int64"(%0 : $Builtin.Int2048) : $(Builtin.Int64, Builtin.Int1), scope 108 // user: %4
+  %4 = tuple_extract %3 : $(Builtin.Int64, Builtin.Int1), 0, scope 108 // user: %5
+  %5 = struct $UInt (%4 : $Builtin.Int64), scope 108 // user: %6
+  return %5 : $UInt, scope 108                    // id: %6
+}
+
+sil_scope 109 { loc "Location.swift":74:41 parent @_TToFC8Location15LocationWrappercfT_S0_ : $@convention(objc_method) (@owned LocationWrapper) -> @owned LocationWrapper }
+
+// @objc LocationWrapper.init() -> LocationWrapper
+sil [thunk] @_TToFC8Location15LocationWrappercfT_S0_ : $@convention(objc_method) (@owned LocationWrapper) -> @owned LocationWrapper {
+// %0                                             // user: %2
+bb0(%0 : $LocationWrapper):
+  // function_ref LocationWrapper.init() -> LocationWrapper
+  %1 = function_ref @_TFC8Location15LocationWrappercfT_S0_ : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper, scope 109 // user: %2
+  %2 = apply %1(%0) : $@convention(method) (@owned LocationWrapper) -> @owned LocationWrapper, scope 109 // user: %3
+  return %2 : $LocationWrapper, scope 109         // id: %3
+}
+
+sil_scope 110 { loc "Location.swift":107:24 parent @_TZFC8Location17LocationFunctions8midpointfzT1xTOS_8PositionSd_1yTS1_Sd__TS1_Sd_ : $@convention(method) (Position, Double, Position, Double, @thick LocationFunctions.Type) -> (Position, Double, @error Error) }
+sil_scope 111 { loc "Location.swift":109:5 parent 110 }
+
+// static LocationFunctions.midpoint(x : (Position, Double), y : (Position, Double)) throws -> (Position, Double)
+sil @_TZFC8Location17LocationFunctions8midpointfzT1xTOS_8PositionSd_1yTS1_Sd__TS1_Sd_ : $@convention(method) (Position, Double, Position, Double, @thick LocationFunctions.Type) -> (Position, Double, @error Error) {
+// %0                                             // user: %5
+// %1                                             // user: %5
+// %2                                             // user: %7
+// %3                                             // user: %7
+// %4                                             // users: %15, %9
+bb0(%0 : $Position, %1 : $Double, %2 : $Position, %3 : $Double, %4 : $@thick LocationFunctions.Type):
+  %5 = tuple (%0 : $Position, %1 : $Double), loc "Location.swift":107:33, scope 110 // users: %12, %11, %6
+  debug_value %5 : $(Position, Double), let, name "x", argno 1, loc "Location.swift":107:33, scope 110 // id: %6
+  %7 = tuple (%2 : $Position, %3 : $Double), loc "Location.swift":107:48, scope 110 // users: %14, %13, %8
+  debug_value %7 : $(Position, Double), let, name "y", argno 2, loc "Location.swift":107:48, scope 110 // id: %8
+  debug_value %4 : $@thick LocationFunctions.Type, let, name "self", argno 3, loc "Location.swift":107:24, scope 110 // id: %9
+  // function_ref static LocationFunctions.midpoint(x : (Position, Double), y : (Position, Double)) throws -> (Position, Double)
+  %10 = function_ref @_TZFC8Location17LocationFunctions8midpointfzT1xTOS_8PositionSd_1yTS1_Sd__TS1_Sd_ : $@convention(method) (Position, Double, Position, Double, @thick LocationFunctions.Type) -> (Position, Double, @error Error), loc "Location.swift":108:20, scope 111 // user: %15
+  %11 = tuple_extract %5 : $(Position, Double), 0, loc "Location.swift":108:32, scope 111 // user: %15
+  %12 = tuple_extract %5 : $(Position, Double), 1, loc "Location.swift":108:32, scope 111 // user: %15
+  %13 = tuple_extract %7 : $(Position, Double), 0, loc "Location.swift":108:38, scope 111 // user: %15
+  %14 = tuple_extract %7 : $(Position, Double), 1, loc "Location.swift":108:38, scope 111 // user: %15
+  try_apply %10(%11, %12, %13, %14, %4) : $@convention(method) (Position, Double, Position, Double, @thick LocationFunctions.Type) -> (Position, Double, @error Error), normal bb1, error bb2, loc "Location.swift":108:39, scope 111 // id: %15
+
+// %16                                            // users: %18, %17
+bb1(%16 : $(Position, Double)):                   // Preds: bb0
+  %17 = tuple_extract %16 : $(Position, Double), 0, loc "Location.swift":108:39, scope 111 // user: %19
+  %18 = tuple_extract %16 : $(Position, Double), 1, loc "Location.swift":108:39, scope 111 // user: %19
+  %19 = tuple (%17 : $Position, %18 : $Double), loc "Location.swift":107:24, scope 111 // user: %20
+  return %19 : $(Position, Double), loc "Location.swift":108:9, scope 111 // id: %20
+
+// %21                                            // user: %22
+bb2(%21 : $Error):                                // Preds: bb0
+  throw %21 : $Error, loc "Location.swift":108:39, scope 111 // id: %22
+}
+
+sil_scope 112 { loc "Location.swift":111:24 parent @_TZFC8Location17LocationFunctions1ffSdSi : $@convention(method) (Double, @thick LocationFunctions.Type) -> Int }
+sil_scope 113 { loc "Location.swift":113:5 parent 112 }
+
+// static LocationFunctions.f(Double) -> Int
+sil @_TZFC8Location17LocationFunctions1ffSdSi : $@convention(method) (Double, @thick LocationFunctions.Type) -> Int {
+// %0                                             // users: %5, %5, %2
+// %1                                             // user: %3
+bb0(%0 : $Double, %1 : $@thick LocationFunctions.Type):
+  debug_value %0 : $Double, let, name "x", argno 1, loc "Location.swift":111:28, scope 112 // id: %2
+  debug_value %1 : $@thick LocationFunctions.Type, let, name "self", argno 2, loc "Location.swift":111:24, scope 112 // id: %3
+  // function_ref pow
+  %4 = function_ref @pow : $@convention(c) (Double, Double) -> Double, loc "Location.swift":112:20, scope 113 // user: %5
+  %5 = apply %4(%0, %0) : $@convention(c) (Double, Double) -> Double, loc "Location.swift":112:28, scope 113 // users: %27, %8
+  br bb1, loc "Location.swift":112:29, scope 113  // id: %6
+
+bb1:                                              // Preds: bb0
+  %7 = integer_literal $Builtin.Int8, 2, loc "Location.swift":112:29, scope 113 // users: %64, %60, %51, %47, %38, %34
+  %8 = struct_extract %5 : $Double, #Double._value, loc "Location.swift":112:29, scope 113 // users: %23, %19, %9
+  %9 = builtin "bitcast_FPIEEE64_Int64"(%8 : $Builtin.FPIEEE64) : $Builtin.Int64, loc "Location.swift":112:29, scope 113 // user: %11
+  %10 = integer_literal $Builtin.Int64, 52, loc "Location.swift":112:29, scope 113 // user: %11
+  %11 = builtin "lshr_Int64"(%9 : $Builtin.Int64, %10 : $Builtin.Int64) : $Builtin.Int64, loc "Location.swift":112:29, scope 113 // user: %13
+  %12 = integer_literal $Builtin.Int64, 2047, loc "Location.swift":112:29, scope 113 // users: %14, %13
+  %13 = builtin "and_Int64"(%11 : $Builtin.Int64, %12 : $Builtin.Int64) : $Builtin.Int64, loc "Location.swift":112:29, scope 113 // user: %14
+  %14 = builtin "cmp_ult_Int64"(%13 : $Builtin.Int64, %12 : $Builtin.Int64) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %16
+  %15 = integer_literal $Builtin.Int1, -1, loc "Location.swift":112:29, scope 113 // users: %24, %20, %16
+  %16 = builtin "int_expect_Int1"(%14 : $Builtin.Int1, %15 : $Builtin.Int1) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %17
+  cond_br %16, bb2, bb8, loc "Location.swift":112:29, scope 113 // id: %17
+
+bb2:                                              // Preds: bb1
+  %18 = float_literal $Builtin.FPIEEE64, 0xC3E0000000000001 // -9.2233720368547778E+18, loc "Location.swift":112:29, scope 113 // user: %19
+  %19 = builtin "fcmp_olt_FPIEEE64"(%18 : $Builtin.FPIEEE64, %8 : $Builtin.FPIEEE64) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %20
+  %20 = builtin "int_expect_Int1"(%19 : $Builtin.Int1, %15 : $Builtin.Int1) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %21
+  cond_br %20, bb3, bb7, loc "Location.swift":112:29, scope 113 // id: %21
+
+bb3:                                              // Preds: bb2
+  %22 = float_literal $Builtin.FPIEEE64, 0x43E0000000000000 // 9.2233720368547758E+18, loc "Location.swift":112:29, scope 113 // user: %23
+  %23 = builtin "fcmp_olt_FPIEEE64"(%8 : $Builtin.FPIEEE64, %22 : $Builtin.FPIEEE64) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %24
+  %24 = builtin "int_expect_Int1"(%23 : $Builtin.Int1, %15 : $Builtin.Int1) : $Builtin.Int1, loc "Location.swift":112:29, scope 113 // user: %25
+  cond_br %24, bb4, bb6, loc "Location.swift":112:29, scope 113 // id: %25
+
+bb4:                                              // Preds: bb3
+  br bb5, loc "Location.swift":112:29, scope 113  // id: %26
+
+bb5:                                              // Preds: bb4
+  %27 = struct_extract %5 : $Double, #Double._value, loc "Location.swift":112:29, scope 113 // user: %28
+  %28 = builtin "fptosi_FPIEEE64_Int64"(%27 : $Builtin.FPIEEE64) : $Builtin.Int64, loc "Location.swift":112:29, scope 113 // user: %29
+  %29 = struct $Int (%28 : $Builtin.Int64), loc "Location.swift":112:29, scope 113 // user: %70
+  br bb9, loc "Location.swift":112:29, scope 113  // id: %30
+
+bb6:                                              // Preds: bb3
+  %31 = string_literal utf8 "Double value cannot be converted to Int because the result would be greater than Int.max", loc "Location.swift":112:29, scope 113 // user: %33
+  %32 = integer_literal $Builtin.Word, 88, loc "Location.swift":112:29, scope 113 // user: %34
+  %33 = builtin "ptrtoint_Word"(%31 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %34
+  %34 = struct $StaticString (%33 : $Builtin.Word, %32 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %42
+  %35 = string_literal utf8 "fatal error", loc "Location.swift":112:29, scope 113 // user: %37
+  %36 = integer_literal $Builtin.Word, 11, loc "Location.swift":112:29, scope 113 // user: %38
+  %37 = builtin "ptrtoint_Word"(%35 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %38
+  %38 = struct $StaticString (%37 : $Builtin.Word, %36 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %42
+  %39 = integer_literal $Builtin.Int32, 1, loc "Location.swift":112:29, scope 113 // user: %40
+  %40 = struct $UInt32 (%39 : $Builtin.Int32), loc "Location.swift":112:29, scope 113 // user: %42
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %41 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113 // user: %42
+  %42 = apply %41(%38, %34, %40) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113
+  unreachable, scope 112                          // id: %43
+
+bb7:                                              // Preds: bb2
+  %44 = string_literal utf8 "Double value cannot be converted to Int because the result would be less than Int.min", loc "Location.swift":112:29, scope 113 // user: %46
+  %45 = integer_literal $Builtin.Word, 85, loc "Location.swift":112:29, scope 113 // user: %47
+  %46 = builtin "ptrtoint_Word"(%44 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %47
+  %47 = struct $StaticString (%46 : $Builtin.Word, %45 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %55
+  %48 = string_literal utf8 "fatal error", loc "Location.swift":112:29, scope 113 // user: %50
+  %49 = integer_literal $Builtin.Word, 11, loc "Location.swift":112:29, scope 113 // user: %51
+  %50 = builtin "ptrtoint_Word"(%48 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %51
+  %51 = struct $StaticString (%50 : $Builtin.Word, %49 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %55
+  %52 = integer_literal $Builtin.Int32, 1, loc "Location.swift":112:29, scope 113 // user: %53
+  %53 = struct $UInt32 (%52 : $Builtin.Int32), loc "Location.swift":112:29, scope 113 // user: %55
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %54 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113 // user: %55
+  %55 = apply %54(%51, %47, %53) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113
+  unreachable, scope 112                          // id: %56
+
+bb8:                                              // Preds: bb1
+  %57 = string_literal utf8 "Double value cannot be converted to Int because it is either infinite or NaN", loc "Location.swift":112:29, scope 113 // user: %59
+  %58 = integer_literal $Builtin.Word, 76, loc "Location.swift":112:29, scope 113 // user: %60
+  %59 = builtin "ptrtoint_Word"(%57 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %60
+  %60 = struct $StaticString (%59 : $Builtin.Word, %58 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %68
+  %61 = string_literal utf8 "fatal error", loc "Location.swift":112:29, scope 113 // user: %63
+  %62 = integer_literal $Builtin.Word, 11, loc "Location.swift":112:29, scope 113 // user: %64
+  %63 = builtin "ptrtoint_Word"(%61 : $Builtin.RawPointer) : $Builtin.Word, loc "Location.swift":112:29, scope 113 // user: %64
+  %64 = struct $StaticString (%63 : $Builtin.Word, %62 : $Builtin.Word, %7 : $Builtin.Int8), loc "Location.swift":112:29, scope 113 // user: %68
+  %65 = integer_literal $Builtin.Int32, 1, loc "Location.swift":112:29, scope 113 // user: %66
+  %66 = struct $UInt32 (%65 : $Builtin.Int32), loc "Location.swift":112:29, scope 113 // user: %68
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %67 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113 // user: %68
+  %68 = apply %67(%64, %60, %66) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, loc "Location.swift":112:29, scope 113
+  unreachable, scope 112                          // id: %69
+
+bb9:                                              // Preds: bb5
+  return %29 : $Int, loc "Location.swift":112:9, scope 113 // id: %70
+}
+
+sil_scope 114 {  parent @_TFSiCfSdSi : $@convention(method) (Double, @thin Int.Type) -> Int }
+
+// Int.init(Double) -> Int
+sil public_external [transparent] [fragile] @_TFSiCfSdSi : $@convention(method) (Double, @thin Int.Type) -> Int {
+// %0                                             // users: %65, %7, %6, %5, %2
+bb0(%0 : $Double, %1 : $@thin Int.Type):
+  debug_value %0 : $Double, scope 114             // id: %2
+  br bb1, scope 114                               // id: %3
+
+bb1:                                              // Preds: bb0
+  %4 = integer_literal $Builtin.Int8, 2, scope 114 // users: %58, %54, %41, %37, %24, %20
+  debug_value %0 : $Double, scope 114             // id: %5
+  debug_value %0 : $Double, scope 114             // id: %6
+  %7 = struct_extract %0 : $Double, #Double._value, scope 114 // users: %48, %31, %8
+  %8 = builtin "bitcast_FPIEEE64_Int64"(%7 : $Builtin.FPIEEE64) : $Builtin.Int64, scope 114 // user: %10
+  %9 = integer_literal $Builtin.Int64, 52, scope 114 // user: %10
+  %10 = builtin "lshr_Int64"(%8 : $Builtin.Int64, %9 : $Builtin.Int64) : $Builtin.Int64, scope 114 // user: %12
+  %11 = integer_literal $Builtin.Int64, 2047, scope 114 // users: %13, %12
+  %12 = builtin "and_Int64"(%10 : $Builtin.Int64, %11 : $Builtin.Int64) : $Builtin.Int64, scope 114 // user: %13
+  %13 = builtin "cmp_ult_Int64"(%12 : $Builtin.Int64, %11 : $Builtin.Int64) : $Builtin.Int1, scope 114 // user: %15
+  %14 = integer_literal $Builtin.Int1, -1, scope 114 // users: %49, %32, %15
+  %15 = builtin "int_expect_Int1"(%13 : $Builtin.Int1, %14 : $Builtin.Int1) : $Builtin.Int1, scope 114 // user: %16
+  cond_br %15, bb3, bb2, scope 114                // id: %16
+
+bb2:                                              // Preds: bb1
+  %17 = string_literal utf8 "Double value cannot be converted to Int because it is either infinite or NaN", scope 114 // user: %19
+  %18 = integer_literal $Builtin.Word, 76, scope 114 // user: %20
+  %19 = builtin "ptrtoint_Word"(%17 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %20
+  %20 = struct $StaticString (%19 : $Builtin.Word, %18 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %28
+  %21 = string_literal utf8 "fatal error", scope 114 // user: %23
+  %22 = integer_literal $Builtin.Word, 11, scope 114 // user: %24
+  %23 = builtin "ptrtoint_Word"(%21 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %24
+  %24 = struct $StaticString (%23 : $Builtin.Word, %22 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %28
+  %25 = integer_literal $Builtin.Int32, 1, scope 114 // user: %26
+  %26 = struct $UInt32 (%25 : $Builtin.Int32), scope 114 // user: %28
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %27 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114 // user: %28
+  %28 = apply %27(%24, %20, %26) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114
+  unreachable, scope 114                          // id: %29
+
+bb3:                                              // Preds: bb1
+  %30 = float_literal $Builtin.FPIEEE64, 0xC3E0000000000001 // -9.2233720368547778E+18, scope 114 // user: %31
+  %31 = builtin "fcmp_olt_FPIEEE64"(%30 : $Builtin.FPIEEE64, %7 : $Builtin.FPIEEE64) : $Builtin.Int1, scope 114 // user: %32
+  %32 = builtin "int_expect_Int1"(%31 : $Builtin.Int1, %14 : $Builtin.Int1) : $Builtin.Int1, scope 114 // user: %33
+  cond_br %32, bb5, bb4, scope 114                // id: %33
+
+bb4:                                              // Preds: bb3
+  %34 = string_literal utf8 "Double value cannot be converted to Int because the result would be less than Int.min", scope 114 // user: %36
+  %35 = integer_literal $Builtin.Word, 85, scope 114 // user: %37
+  %36 = builtin "ptrtoint_Word"(%34 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %37
+  %37 = struct $StaticString (%36 : $Builtin.Word, %35 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %45
+  %38 = string_literal utf8 "fatal error", scope 114 // user: %40
+  %39 = integer_literal $Builtin.Word, 11, scope 114 // user: %41
+  %40 = builtin "ptrtoint_Word"(%38 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %41
+  %41 = struct $StaticString (%40 : $Builtin.Word, %39 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %45
+  %42 = integer_literal $Builtin.Int32, 1, scope 114 // user: %43
+  %43 = struct $UInt32 (%42 : $Builtin.Int32), scope 114 // user: %45
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %44 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114 // user: %45
+  %45 = apply %44(%41, %37, %43) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114
+  unreachable, scope 114                          // id: %46
+
+bb5:                                              // Preds: bb3
+  %47 = float_literal $Builtin.FPIEEE64, 0x43E0000000000000 // 9.2233720368547758E+18, scope 114 // user: %48
+  %48 = builtin "fcmp_olt_FPIEEE64"(%7 : $Builtin.FPIEEE64, %47 : $Builtin.FPIEEE64) : $Builtin.Int1, scope 114 // user: %49
+  %49 = builtin "int_expect_Int1"(%48 : $Builtin.Int1, %14 : $Builtin.Int1) : $Builtin.Int1, scope 114 // user: %50
+  cond_br %49, bb7, bb6, scope 114                // id: %50
+
+bb6:                                              // Preds: bb5
+  %51 = string_literal utf8 "Double value cannot be converted to Int because the result would be greater than Int.max", scope 114 // user: %53
+  %52 = integer_literal $Builtin.Word, 88, scope 114 // user: %54
+  %53 = builtin "ptrtoint_Word"(%51 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %54
+  %54 = struct $StaticString (%53 : $Builtin.Word, %52 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %62
+  %55 = string_literal utf8 "fatal error", scope 114 // user: %57
+  %56 = integer_literal $Builtin.Word, 11, scope 114 // user: %58
+  %57 = builtin "ptrtoint_Word"(%55 : $Builtin.RawPointer) : $Builtin.Word, scope 114 // user: %58
+  %58 = struct $StaticString (%57 : $Builtin.Word, %56 : $Builtin.Word, %4 : $Builtin.Int8), scope 114 // user: %62
+  %59 = integer_literal $Builtin.Int32, 1, scope 114 // user: %60
+  %60 = struct $UInt32 (%59 : $Builtin.Int32), scope 114 // user: %62
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %61 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114 // user: %62
+  %62 = apply %61(%58, %54, %60) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 114
+  unreachable, scope 114                          // id: %63
+
+bb7:                                              // Preds: bb5
+  br bb8, scope 114                               // id: %64
+
+bb8:                                              // Preds: bb7
+  %65 = struct_extract %0 : $Double, #Double._value, scope 114 // user: %66
+  %66 = builtin "fptosi_FPIEEE64_Int64"(%65 : $Builtin.FPIEEE64) : $Builtin.Int64, scope 114 // user: %67
+  %67 = struct $Int (%66 : $Builtin.Int64), scope 114 // user: %68
+  return %67 : $Int, scope 114                    // id: %68
+}
+
+
+// pow
+sil [readnone] [clang pow] @pow : $@convention(c) (Double, Double) -> Double
+
+sil_scope 115 { loc "Location.swift":111:24 parent @_TToZFC8Location17LocationFunctions1ffSdSi : $@convention(objc_method) (Double, @objc_metatype LocationFunctions.Type) -> Int }
+
+// @objc static LocationFunctions.f(Double) -> Int
+sil [thunk] @_TToZFC8Location17LocationFunctions1ffSdSi : $@convention(objc_method) (Double, @objc_metatype LocationFunctions.Type) -> Int {
+// %0                                             // user: %4
+// %1                                             // user: %2
+bb0(%0 : $Double, %1 : $@objc_metatype LocationFunctions.Type):
+  %2 = objc_to_thick_metatype %1 : $@objc_metatype LocationFunctions.Type to $@thick LocationFunctions.Type, scope 115 // user: %4
+  // function_ref static LocationFunctions.f(Double) -> Int
+  %3 = function_ref @_TZFC8Location17LocationFunctions1ffSdSi : $@convention(method) (Double, @thick LocationFunctions.Type) -> Int, scope 115 // user: %4
+  %4 = apply %3(%0, %2) : $@convention(method) (Double, @thick LocationFunctions.Type) -> Int, scope 115 // user: %5
+  return %4 : $Int, scope 115                     // id: %5
+}
+
+sil_scope 116 { loc "Location.swift":106:14 parent @_TFC8Location17LocationFunctionsD : $@convention(method) (@owned LocationFunctions) -> () }
+sil_scope 117 { loc "Location.swift":106:14 parent 116 }
+
+// LocationFunctions.__deallocating_deinit
+sil @_TFC8Location17LocationFunctionsD : $@convention(method) (@owned LocationFunctions) -> () {
+// %0                                             // users: %3, %2, %1
+bb0(%0 : $LocationFunctions):
+  debug_value %0 : $LocationFunctions, let, name "self", argno 1, loc "Location.swift":106:14, scope 116 // id: %1
+  %2 = super_method %0 : $LocationFunctions, #NSObject.deinit!deallocator.foreign : (NSObject) -> () -> () , $@convention(objc_method) (NSObject) -> (), scope 117 // user: %4
+  %3 = upcast %0 : $LocationFunctions to $NSObject, scope 117 // user: %4
+  %4 = apply %2(%3) : $@convention(objc_method) (NSObject) -> (), scope 117
+  %5 = tuple (), scope 117                        // user: %6
+  return %5 : $(), scope 117                      // id: %6
+}
+
+sil_scope 118 { loc "Location.swift":106:43 parent @_TFC8Location17LocationFunctionscfT_S0_ : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions }
+sil_scope 119 {  parent 118 }
+
+// LocationFunctions.init() -> LocationFunctions
+sil @_TFC8Location17LocationFunctionscfT_S0_ : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions {
+// %0                                             // users: %3, %4, %2
+bb0(%0 : $LocationFunctions):
+  %1 = alloc_stack $LocationFunctions, let, name "self", scope 118 // users: %2, %7, %8
+  store %0 to %1 : $*LocationFunctions, loc "Location.swift":106:43, scope 118 // id: %2
+  %3 = upcast %0 : $LocationFunctions to $NSObject, scope 119 // user: %5
+  %4 = super_method [volatile] %0 : $LocationFunctions, #NSObject.init!initializer.1.foreign : (NSObject.Type) -> () -> NSObject , $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 119 // user: %5
+  %5 = apply %4(%3) : $@convention(objc_method) (@owned NSObject) -> @owned NSObject, scope 119 // user: %6
+  %6 = unchecked_ref_cast %5 : $NSObject to $LocationFunctions, scope 119 // users: %9, %7
+  store %6 to %1 : $*LocationFunctions, scope 119 // id: %7
+  dealloc_stack %1 : $*LocationFunctions, scope 119 // id: %8
+  return %6 : $LocationFunctions, loc "Location.swift":106:43, scope 119 // id: %9
+}
+
+sil_scope 120 { loc "Location.swift":106:43 parent @_TFC8Location17LocationFunctionsCfT_S0_ : $@convention(method) (@thick LocationFunctions.Type) -> @owned LocationFunctions }
+
+// LocationFunctions.__allocating_init() -> LocationFunctions
+sil @_TFC8Location17LocationFunctionsCfT_S0_ : $@convention(method) (@thick LocationFunctions.Type) -> @owned LocationFunctions {
+bb0(%0 : $@thick LocationFunctions.Type):
+  %1 = alloc_ref [objc] $LocationFunctions, scope 120 // user: %3
+  // function_ref LocationFunctions.init() -> LocationFunctions
+  %2 = function_ref @_TFC8Location17LocationFunctionscfT_S0_ : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions, scope 120 // user: %3
+  %3 = apply %2(%1) : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions, scope 120 // user: %4
+  return %3 : $LocationFunctions, scope 120       // id: %4
+}
+
+sil_scope 121 { loc "Location.swift":106:43 parent @_TToFC8Location17LocationFunctionscfT_S0_ : $@convention(objc_method) (@owned LocationFunctions) -> @owned LocationFunctions }
+
+// @objc LocationFunctions.init() -> LocationFunctions
+sil [thunk] @_TToFC8Location17LocationFunctionscfT_S0_ : $@convention(objc_method) (@owned LocationFunctions) -> @owned LocationFunctions {
+// %0                                             // user: %2
+bb0(%0 : $LocationFunctions):
+  // function_ref LocationFunctions.init() -> LocationFunctions
+  %1 = function_ref @_TFC8Location17LocationFunctionscfT_S0_ : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions, scope 121 // user: %2
+  %2 = apply %1(%0) : $@convention(method) (@owned LocationFunctions) -> @owned LocationFunctions, scope 121 // user: %3
+  return %2 : $LocationFunctions, scope 121       // id: %3
+}
+
+
+// globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4
+sil private_external [fragile] @globalinit_33_FD9A49A256BEB6AF7C48013347ADC3BA_func4 : $@convention(thin) () -> ()
+
+sil_scope 122 {  parent @_TTWSis9EquatablesZFS_oi2eefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool }
+
+// protocol witness for static Equatable.== infix(A, A) -> Bool in conformance Int
+sil public_external [transparent] [fragile] [thunk] @_TTWSis9EquatablesZFS_oi2eefTxx_Sb : $@convention(witness_method) (@in Int, @in Int, @thick Int.Type) -> Bool {
+// %0                                             // user: %3
+// %1                                             // user: %5
+bb0(%0 : $*Int, %1 : $*Int, %2 : $@thick Int.Type):
+  %3 = struct_element_addr %0 : $*Int, #Int._value, scope 122 // user: %4
+  %4 = load %3 : $*Builtin.Int64, scope 122       // user: %7
+  %5 = struct_element_addr %1 : $*Int, #Int._value, scope 122 // user: %6
+  %6 = load %5 : $*Builtin.Int64, scope 122       // user: %7
+  %7 = builtin "cmp_eq_Int64"(%4 : $Builtin.Int64, %6 : $Builtin.Int64) : $Builtin.Int1, scope 122 // user: %8
+  %8 = struct $Bool (%7 : $Builtin.Int1), scope 122 // user: %9
+  return %8 : $Bool, scope 122                    // id: %9
+}
+
+sil_scope 123 {  parent @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2)
+sil shared_external [fragile] @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString) -> () {
+// %0                                             // users: %5, %2
+// %1                                             // users: %8, %3
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString):
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 123 // id: %2
+  debug_value %1 : $StaticString, scope 123       // id: %3
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2).(closure #1)
+  %4 = function_ref @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> (), scope 123 // user: %5
+  %5 = partial_apply %4(%0) : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> (), scope 123 // user: %8
+  // function_ref specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %6 = function_ref @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 123 // user: %8
+  %7 = alloc_stack $(), scope 123                 // users: %9, %8
+  %8 = apply %6(%7, %1, %5) : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 123
+  dealloc_stack %7 : $*(), scope 123              // id: %9
+  %10 = tuple (), scope 123                       // user: %11
+  return %10 : $(), scope 123                     // id: %11
+}
+
+sil_scope 124 {  parent @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out () }
+
+// specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+sil shared_external [fragile] @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out () {
+// %1                                             // users: %132, %124, %17, %6, %5
+// %2                                             // users: %144, %137, %122
+bb0(%0 : $*(), %1 : $StaticString, %2 : $@callee_owned (UnsafeBufferPointer<UInt8>) -> ()):
+  %3 = alloc_stack $UInt64, scope 124             // users: %141, %116, %115, %111, %102, %93, %14
+  %4 = alloc_stack $Int, scope 124                // users: %140, %119, %115, %111, %102, %93, %16
+  debug_value %1 : $StaticString, scope 124       // id: %5
+  %6 = struct_extract %1 : $StaticString, #StaticString._flags, scope 124 // user: %8
+  %7 = integer_literal $Builtin.Int8, 1, scope 124 // user: %8
+  %8 = builtin "and_Int8"(%6 : $Builtin.Int8, %7 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %10
+  %9 = integer_literal $Builtin.Int8, 0, scope 124 // user: %10
+  %10 = builtin "cmp_eq_Int8"(%8 : $Builtin.Int8, %9 : $Builtin.Int8) : $Builtin.Int1, scope 124 // user: %11
+  cond_br %10, bb20, bb1, scope 124               // id: %11
+
+bb1:                                              // Preds: bb0
+  %12 = integer_literal $Builtin.Int64, 0, scope 124 // users: %15, %13
+  %13 = struct $UInt64 (%12 : $Builtin.Int64), scope 124 // user: %14
+  store %13 to %3 : $*UInt64, scope 124           // id: %14
+  %15 = struct $Int (%12 : $Builtin.Int64), scope 124 // user: %16
+  store %15 to %4 : $*Int, scope 124              // id: %16
+  %17 = struct_extract %1 : $StaticString, #StaticString._startPtrOrData, scope 124 // user: %18
+  %18 = builtin "zextOrBitCast_Word_Int64"(%17 : $Builtin.Word) : $Builtin.Int64, scope 124 // user: %19
+  %19 = builtin "u_to_u_checked_trunc_Int64_Int32"(%18 : $Builtin.Int64) : $(Builtin.Int32, Builtin.Int1), scope 124 // users: %21, %20
+  %20 = tuple_extract %19 : $(Builtin.Int32, Builtin.Int1), 0, scope 124 // users: %67, %63, %59, %33, %27, %24
+  %21 = tuple_extract %19 : $(Builtin.Int32, Builtin.Int1), 1, scope 124 // user: %22
+  cond_fail %21 : $Builtin.Int1, scope 124        // id: %22
+  %23 = integer_literal $Builtin.Int32, 55296, scope 124 // user: %24
+  %24 = builtin "cmp_ult_Int32"(%20 : $Builtin.Int32, %23 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %25
+  cond_br %24, bb5, bb2, scope 124                // id: %25
+
+bb2:                                              // Preds: bb1
+  %26 = integer_literal $Builtin.Int32, 57343, scope 124 // user: %27
+  %27 = builtin "cmp_ugt_Int32"(%20 : $Builtin.Int32, %26 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %28
+  cond_br %27, bb4, bb3, scope 124                // id: %28
+
+bb3:                                              // Preds: bb2
+  br bb8, scope 124                               // id: %29
+
+bb4:                                              // Preds: bb2
+  br bb6, scope 124                               // id: %30
+
+bb5:                                              // Preds: bb1
+  br bb6, scope 124                               // id: %31
+
+bb6:                                              // Preds: bb5 bb4
+  %32 = integer_literal $Builtin.Int32, 1114111, scope 124 // user: %33
+  %33 = builtin "cmp_ule_Int32"(%20 : $Builtin.Int32, %32 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %34
+  cond_br %33, bb10, bb7, scope 124               // id: %34
+
+bb7:                                              // Preds: bb6
+  br bb8, scope 124                               // id: %35
+
+bb8:                                              // Preds: bb7 bb3
+  br bb9, scope 124                               // id: %36
+
+bb9:                                              // Preds: bb8
+  %37 = integer_literal $Builtin.Int8, 2, scope 124 // users: %52, %45, %41
+  %38 = string_literal utf8 "/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-800.0.43.6/src/swift/stdlib/public/core/StaticString.swift", scope 124 // user: %40
+  %39 = integer_literal $Builtin.Word, 116, scope 124 // user: %41
+  %40 = builtin "ptrtoint_Word"(%38 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %41
+  %41 = struct $StaticString (%40 : $Builtin.Word, %39 : $Builtin.Word, %37 : $Builtin.Int8), scope 124 // user: %55
+  %42 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 124 // user: %44
+  %43 = integer_literal $Builtin.Word, 57, scope 124 // user: %45
+  %44 = builtin "ptrtoint_Word"(%42 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %45
+  %45 = struct $StaticString (%44 : $Builtin.Word, %43 : $Builtin.Word, %37 : $Builtin.Int8), scope 124 // user: %55
+  %46 = integer_literal $Builtin.Int64, 79, scope 124 // user: %47
+  %47 = struct $UInt (%46 : $Builtin.Int64), scope 124 // user: %55
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %48 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 124 // user: %55
+  %49 = string_literal utf8 "fatal error", scope 124 // user: %51
+  %50 = integer_literal $Builtin.Word, 11, scope 124 // user: %52
+  %51 = builtin "ptrtoint_Word"(%49 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %52
+  %52 = struct $StaticString (%51 : $Builtin.Word, %50 : $Builtin.Word, %37 : $Builtin.Int8), scope 124 // user: %55
+  %53 = integer_literal $Builtin.Int32, 1, scope 124 // user: %54
+  %54 = struct $UInt32 (%53 : $Builtin.Int32), scope 124 // user: %55
+  %55 = apply %48(%52, %45, %41, %47, %54) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 124
+  unreachable, scope 124                          // id: %56
+
+bb10:                                             // Preds: bb6
+  // function_ref specialized StaticString.(withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A).(closure #1)
+  %57 = function_ref @_TTSfq0n_k_k___TFFVs12StaticString14withUTF8BufferurFFGSRVs5UInt8_xxU_FS0_T_ : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> (), scope 124 // users: %115, %111, %102, %93
+  %58 = integer_literal $Builtin.Int32, 255, scope 124 // users: %77, %70, %59
+  %59 = builtin "and_Int32"(%20 : $Builtin.Int32, %58 : $Builtin.Int32) : $Builtin.Int32, scope 124 // user: %60
+  %60 = builtin "u_to_u_checked_trunc_Int32_Int8"(%59 : $Builtin.Int32) : $(Builtin.Int8, Builtin.Int1), scope 124 // user: %61
+  %61 = tuple_extract %60 : $(Builtin.Int8, Builtin.Int1), 0, scope 124 // users: %108, %65
+  %62 = integer_literal $Builtin.Int32, 128, scope 124 // user: %63
+  %63 = builtin "cmp_uge_Int32"(%20 : $Builtin.Int32, %62 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %64
+  cond_br %63, bb12, bb11, scope 124              // id: %64
+
+bb11:                                             // Preds: bb10
+  br bb19(%61 : $Builtin.Int8), scope 124         // id: %65
+
+bb12:                                             // Preds: bb10
+  %66 = integer_literal $Builtin.Int32, 6, scope 124 // users: %83, %76, %67
+  %67 = builtin "lshr_Int32"(%20 : $Builtin.Int32, %66 : $Builtin.Int32) : $Builtin.Int32, scope 124 // users: %76, %74, %70
+  %68 = integer_literal $Builtin.Int8, 63, scope 124 // users: %108, %99, %84
+  %69 = integer_literal $Builtin.Int8, -128, scope 124 // users: %109, %100, %85
+  %70 = builtin "and_Int32"(%67 : $Builtin.Int32, %58 : $Builtin.Int32) : $Builtin.Int32, scope 124 // user: %71
+  %71 = builtin "u_to_u_checked_trunc_Int32_Int8"(%70 : $Builtin.Int32) : $(Builtin.Int8, Builtin.Int1), scope 124 // user: %72
+  %72 = tuple_extract %71 : $(Builtin.Int8, Builtin.Int1), 0, scope 124 // users: %105, %99
+  %73 = integer_literal $Builtin.Int32, 32, scope 124 // user: %74
+  %74 = builtin "cmp_ult_Int32"(%67 : $Builtin.Int32, %73 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %75
+  cond_br %74, bb17, bb13, scope 124              // id: %75
+
+bb13:                                             // Preds: bb12
+  %76 = builtin "lshr_Int32"(%67 : $Builtin.Int32, %66 : $Builtin.Int32) : $Builtin.Int32, scope 124 // users: %83, %81, %77
+  %77 = builtin "and_Int32"(%76 : $Builtin.Int32, %58 : $Builtin.Int32) : $Builtin.Int32, scope 124 // user: %78
+  %78 = builtin "u_to_u_checked_trunc_Int32_Int8"(%77 : $Builtin.Int32) : $(Builtin.Int8, Builtin.Int1), scope 124 // user: %79
+  %79 = tuple_extract %78 : $(Builtin.Int8, Builtin.Int1), 0, scope 124 // users: %96, %84
+  %80 = integer_literal $Builtin.Int32, 16, scope 124 // user: %81
+  %81 = builtin "cmp_ult_Int32"(%76 : $Builtin.Int32, %80 : $Builtin.Int32) : $Builtin.Int1, scope 124 // user: %82
+  cond_br %81, bb15, bb14, scope 124              // id: %82
+
+bb14:                                             // Preds: bb13
+  %83 = builtin "lshr_Int32"(%76 : $Builtin.Int32, %66 : $Builtin.Int32) : $Builtin.Int32, scope 124 // user: %87
+  %84 = builtin "and_Int8"(%79 : $Builtin.Int8, %68 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %85
+  %85 = builtin "or_Int8"(%84 : $Builtin.Int8, %69 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %94
+  %86 = integer_literal $Builtin.Int32, 240, scope 124 // user: %87
+  %87 = builtin "or_Int32"(%83 : $Builtin.Int32, %86 : $Builtin.Int32) : $Builtin.Int32, scope 124 // user: %88
+  %88 = builtin "u_to_u_checked_trunc_Int32_Int8"(%87 : $Builtin.Int32) : $(Builtin.Int8, Builtin.Int1), scope 124 // users: %90, %89
+  %89 = tuple_extract %88 : $(Builtin.Int8, Builtin.Int1), 0, scope 124 // user: %92
+  %90 = tuple_extract %88 : $(Builtin.Int8, Builtin.Int1), 1, scope 124 // user: %91
+  cond_fail %90 : $Builtin.Int1, scope 124        // id: %91
+  %92 = struct $UInt8 (%89 : $Builtin.Int8), scope 124 // user: %93
+  %93 = apply %57(%92, %3, %4) : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> (), scope 124
+  br bb16(%85 : $Builtin.Int8), scope 124         // id: %94
+
+bb15:                                             // Preds: bb13
+  %95 = integer_literal $Builtin.Int8, -32, scope 124 // user: %96
+  %96 = builtin "or_Int8"(%79 : $Builtin.Int8, %95 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %97
+  br bb16(%96 : $Builtin.Int8), scope 124         // id: %97
+
+// %98                                            // user: %101
+bb16(%98 : $Builtin.Int8):                        // Preds: bb15 bb14
+  %99 = builtin "and_Int8"(%72 : $Builtin.Int8, %68 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %100
+  %100 = builtin "or_Int8"(%99 : $Builtin.Int8, %69 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %103
+  %101 = struct $UInt8 (%98 : $Builtin.Int8), scope 124 // user: %102
+  %102 = apply %57(%101, %3, %4) : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> (), scope 124
+  br bb18(%100 : $Builtin.Int8), scope 124        // id: %103
+
+bb17:                                             // Preds: bb12
+  %104 = integer_literal $Builtin.Int8, -64, scope 124 // user: %105
+  %105 = builtin "or_Int8"(%72 : $Builtin.Int8, %104 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %106
+  br bb18(%105 : $Builtin.Int8), scope 124        // id: %106
+
+// %107                                           // user: %110
+bb18(%107 : $Builtin.Int8):                       // Preds: bb17 bb16
+  %108 = builtin "and_Int8"(%61 : $Builtin.Int8, %68 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %109
+  %109 = builtin "or_Int8"(%108 : $Builtin.Int8, %69 : $Builtin.Int8) : $Builtin.Int8, scope 124 // user: %112
+  %110 = struct $UInt8 (%107 : $Builtin.Int8), scope 124 // user: %111
+  %111 = apply %57(%110, %3, %4) : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> (), scope 124
+  br bb19(%109 : $Builtin.Int8), scope 124        // id: %112
+
+// %113                                           // user: %114
+bb19(%113 : $Builtin.Int8):                       // Preds: bb18 bb11
+  %114 = struct $UInt8 (%113 : $Builtin.Int8), scope 124 // user: %115
+  %115 = apply %57(%114, %3, %4) : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> (), scope 124
+  %116 = address_to_pointer %3 : $*UInt64 to $Builtin.RawPointer, scope 124 // user: %117
+  %117 = struct $UnsafePointer<UInt8> (%116 : $Builtin.RawPointer), scope 124 // user: %118
+  %118 = enum $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, %117 : $UnsafePointer<UInt8>, scope 124 // user: %121
+  %119 = load %4 : $*Int, scope 124               // user: %121
+  // function_ref specialized specialized UnsafeBufferPointer.init(start : UnsafePointer<A>?, count : Int) -> UnsafeBufferPointer<A>
+  %120 = function_ref @_TTSfq4n_n_d___TTSgq5Vs5UInt8___TFSRCfT5startGSqGSPx__5countSi_GSRx_ : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8>, scope 124 // user: %121
+  %121 = apply %120(%118, %119) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8>, scope 124 // user: %122
+  %122 = apply %2(%121) : $@callee_owned (UnsafeBufferPointer<UInt8>) -> (), scope 124
+  br bb22, scope 124                              // id: %123
+
+bb20:                                             // Preds: bb0
+  %124 = struct_extract %1 : $StaticString, #StaticString._startPtrOrData, scope 124 // users: %129, %125
+  %125 = builtin "zextOrBitCast_Word_Int64"(%124 : $Builtin.Word) : $Builtin.Int64, scope 124 // user: %127
+  %126 = integer_literal $Builtin.Int64, 0, scope 124 // user: %127
+  %127 = builtin "cmp_eq_Int64"(%125 : $Builtin.Int64, %126 : $Builtin.Int64) : $Builtin.Int1, scope 124 // user: %128
+  cond_br %127, bb23, bb21, scope 124             // id: %128
+
+bb21:                                             // Preds: bb20
+  %129 = builtin "inttoptr_Word"(%124 : $Builtin.Word) : $Builtin.RawPointer, scope 124 // user: %130
+  %130 = struct $UnsafePointer<UInt8> (%129 : $Builtin.RawPointer), scope 124 // user: %131
+  %131 = enum $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, %130 : $UnsafePointer<UInt8>, scope 124 // user: %136
+  %132 = struct_extract %1 : $StaticString, #StaticString._utf8CodeUnitCount, scope 124 // user: %133
+  %133 = builtin "zextOrBitCast_Word_Int64"(%132 : $Builtin.Word) : $Builtin.Int64, scope 124 // user: %134
+  %134 = struct $Int (%133 : $Builtin.Int64), scope 124 // user: %136
+  // function_ref specialized specialized UnsafeBufferPointer.init(start : UnsafePointer<A>?, count : Int) -> UnsafeBufferPointer<A>
+  %135 = function_ref @_TTSfq4n_n_d___TTSgq5Vs5UInt8___TFSRCfT5startGSqGSPx__5countSi_GSRx_ : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8>, scope 124 // user: %136
+  %136 = apply %135(%131, %134) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8>, scope 124 // user: %137
+  %137 = apply %2(%136) : $@callee_owned (UnsafeBufferPointer<UInt8>) -> (), scope 124
+  br bb22, scope 124                              // id: %138
+
+bb22:                                             // Preds: bb21 bb19
+  %139 = tuple (), scope 124                      // user: %142
+  dealloc_stack %4 : $*Int, scope 124             // id: %140
+  dealloc_stack %3 : $*UInt64, scope 124          // id: %141
+  return %139 : $(), scope 124                    // id: %142
+
+bb23:                                             // Preds: bb20
+  br bb24, scope 124                              // id: %143
+
+bb24:                                             // Preds: bb23
+  strong_release %2 : $@callee_owned (UnsafeBufferPointer<UInt8>) -> (), scope 124 // id: %144
+  %145 = integer_literal $Builtin.Int8, 2, scope 124 // users: %160, %153, %149
+  %146 = string_literal utf8 "/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-800.0.43.6/src/swift/stdlib/public/core/StaticString.swift", scope 124 // user: %148
+  %147 = integer_literal $Builtin.Word, 116, scope 124 // user: %149
+  %148 = builtin "ptrtoint_Word"(%146 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %149
+  %149 = struct $StaticString (%148 : $Builtin.Word, %147 : $Builtin.Word, %145 : $Builtin.Int8), scope 124 // user: %163
+  %150 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 124 // user: %152
+  %151 = integer_literal $Builtin.Word, 57, scope 124 // user: %153
+  %152 = builtin "ptrtoint_Word"(%150 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %153
+  %153 = struct $StaticString (%152 : $Builtin.Word, %151 : $Builtin.Word, %145 : $Builtin.Int8), scope 124 // user: %163
+  %154 = integer_literal $Builtin.Int64, 66, scope 124 // user: %155
+  %155 = struct $UInt (%154 : $Builtin.Int64), scope 124 // user: %163
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %156 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 124 // user: %163
+  %157 = string_literal utf8 "fatal error", scope 124 // user: %159
+  %158 = integer_literal $Builtin.Word, 11, scope 124 // user: %160
+  %159 = builtin "ptrtoint_Word"(%157 : $Builtin.RawPointer) : $Builtin.Word, scope 124 // user: %160
+  %160 = struct $StaticString (%159 : $Builtin.Word, %158 : $Builtin.Word, %145 : $Builtin.Int8), scope 124 // user: %163
+  %161 = integer_literal $Builtin.Int32, 1, scope 124 // user: %162
+  %162 = struct $UInt32 (%161 : $Builtin.Int32), scope 124 // user: %163
+  %163 = apply %156(%160, %153, %149, %155, %162) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 124
+  unreachable, scope 124                          // id: %164
+}
+
+sil_scope 125 {  parent @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1)
+sil shared_external [fragile] @_TFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, StaticString, UInt, UInt) -> () {
+// %0                                             // users: %11, %5
+// %1                                             // users: %14, %6
+// %2                                             // users: %11, %7
+// %3                                             // users: %11, %8
+// %4                                             // users: %11, %9
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString, %2 : $StaticString, %3 : $UInt, %4 : $UInt):
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 125 // id: %5
+  debug_value %1 : $StaticString, scope 125       // id: %6
+  debug_value %2 : $StaticString, scope 125       // id: %7
+  debug_value %3 : $UInt, scope 125               // id: %8
+  debug_value %4 : $UInt, scope 125               // id: %9
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1)
+  %10 = function_ref @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 125 // user: %11
+  %11 = partial_apply %10(%2, %0, %3, %4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 125 // user: %14
+  // function_ref specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %12 = function_ref @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 125 // user: %14
+  %13 = alloc_stack $(), scope 125                // users: %15, %14
+  %14 = apply %12(%13, %1, %11) : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 125
+  dealloc_stack %13 : $*(), scope 125             // id: %15
+  %16 = tuple (), scope 125                       // user: %17
+  return %16 : $(), scope 125                     // id: %17
+}
+
+sil_scope 126 {  parent @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #2).(closure #1)
+sil shared_external [fragile] @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU0_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>) -> () {
+// %0                                             // users: %22, %15, %14, %2
+// %1                                             // users: %8, %5, %4, %3
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $UnsafeBufferPointer<UInt8>):
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 126 // id: %2
+  debug_value %1 : $UnsafeBufferPointer<UInt8>, scope 126 // id: %3
+  debug_value %1 : $UnsafeBufferPointer<UInt8>, scope 126 // id: %4
+  %5 = struct_extract %1 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._position, scope 126 // users: %18, %9, %6
+  switch_enum %5 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb5, case #Optional.some!enumelt.1: bb1, scope 126 // id: %6
+
+bb1:                                              // Preds: bb0
+  // function_ref specialized specialized UnsafeBufferPointer.count.getter
+  %7 = function_ref @_TTSfq4s___TTSgq5Vs5UInt8___TFSRg5countSi : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 126 // users: %23, %9
+  %8 = struct_extract %1 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._end, scope 126 // user: %9
+  %9 = apply %7(%5, %8) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 126 // user: %10
+  %10 = struct_extract %9 : $Int, #Int._value, scope 126 // user: %11
+  %11 = builtin "s_to_u_checked_conversion_Int64"(%10 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 126 // users: %19, %12
+  %12 = tuple_extract %11 : $(Builtin.Int64, Builtin.Int1), 1, scope 126 // user: %13
+  cond_fail %12 : $Builtin.Int1, scope 126        // id: %13
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 126 // id: %14
+  %15 = struct_extract %0 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._position, scope 126 // users: %23, %21, %16
+  switch_enum %15 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb3, case #Optional.some!enumelt.1: bb2, scope 126 // id: %16
+
+bb2:                                              // Preds: bb1
+  // function_ref _swift_stdlib_reportUnimplementedInitializer
+  %17 = function_ref @_swift_stdlib_reportUnimplementedInitializer : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt32) -> (), scope 126 // user: %32
+  %18 = unchecked_enum_data %5 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 126 // user: %32
+  %19 = tuple_extract %11 : $(Builtin.Int64, Builtin.Int1), 0, scope 126 // user: %20
+  %20 = struct $UInt (%19 : $Builtin.Int64), scope 126 // user: %32
+  %21 = unchecked_enum_data %15 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 126 // user: %32
+  %22 = struct_extract %0 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._end, scope 126 // user: %23
+  %23 = apply %7(%15, %22) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 126 // user: %24
+  %24 = struct_extract %23 : $Int, #Int._value, scope 126 // user: %25
+  %25 = builtin "s_to_u_checked_conversion_Int64"(%24 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 126 // users: %27, %26
+  %26 = tuple_extract %25 : $(Builtin.Int64, Builtin.Int1), 0, scope 126 // user: %29
+  %27 = tuple_extract %25 : $(Builtin.Int64, Builtin.Int1), 1, scope 126 // user: %28
+  cond_fail %27 : $Builtin.Int1, scope 126        // id: %28
+  %29 = struct $UInt (%26 : $Builtin.Int64), scope 126 // user: %32
+  %30 = integer_literal $Builtin.Int32, 0, scope 126 // user: %31
+  %31 = struct $UInt32 (%30 : $Builtin.Int32), scope 126 // user: %32
+  %32 = apply %17(%18, %20, %21, %29, %31) : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt32) -> (), scope 126
+  %33 = tuple (), scope 126                       // user: %34
+  return %33 : $(), scope 126                     // id: %34
+
+bb3:                                              // Preds: bb1
+  br bb4, scope 126                               // id: %35
+
+bb4:                                              // Preds: bb3
+  %36 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 126 // user: %38
+  %37 = integer_literal $Builtin.Word, 57, scope 126 // user: %40
+  %38 = builtin "ptrtoint_Word"(%36 : $Builtin.RawPointer) : $Builtin.Word, scope 126 // user: %40
+  %39 = integer_literal $Builtin.Int8, 2, scope 126 // users: %44, %40
+  %40 = struct $StaticString (%38 : $Builtin.Word, %37 : $Builtin.Word, %39 : $Builtin.Int8), scope 126 // user: %48
+  %41 = string_literal utf8 "fatal error", scope 126 // user: %43
+  %42 = integer_literal $Builtin.Word, 11, scope 126 // user: %44
+  %43 = builtin "ptrtoint_Word"(%41 : $Builtin.RawPointer) : $Builtin.Word, scope 126 // user: %44
+  %44 = struct $StaticString (%43 : $Builtin.Word, %42 : $Builtin.Word, %39 : $Builtin.Int8), scope 126 // user: %48
+  %45 = integer_literal $Builtin.Int32, 1, scope 126 // user: %46
+  %46 = struct $UInt32 (%45 : $Builtin.Int32), scope 126 // user: %48
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %47 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 126 // user: %48
+  %48 = apply %47(%44, %40, %46) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 126
+  unreachable, scope 126                          // id: %49
+
+bb5:                                              // Preds: bb0
+  br bb6, scope 126                               // id: %50
+
+bb6:                                              // Preds: bb5
+  %51 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 126 // user: %53
+  %52 = integer_literal $Builtin.Word, 57, scope 126 // user: %55
+  %53 = builtin "ptrtoint_Word"(%51 : $Builtin.RawPointer) : $Builtin.Word, scope 126 // user: %55
+  %54 = integer_literal $Builtin.Int8, 2, scope 126 // users: %59, %55
+  %55 = struct $StaticString (%53 : $Builtin.Word, %52 : $Builtin.Word, %54 : $Builtin.Int8), scope 126 // user: %63
+  %56 = string_literal utf8 "fatal error", scope 126 // user: %58
+  %57 = integer_literal $Builtin.Word, 11, scope 126 // user: %59
+  %58 = builtin "ptrtoint_Word"(%56 : $Builtin.RawPointer) : $Builtin.Word, scope 126 // user: %59
+  %59 = struct $StaticString (%58 : $Builtin.Word, %57 : $Builtin.Word, %54 : $Builtin.Int8), scope 126 // user: %63
+  %60 = integer_literal $Builtin.Int32, 1, scope 126 // user: %61
+  %61 = struct $UInt32 (%60 : $Builtin.Int32), scope 126 // user: %63
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %62 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 126 // user: %63
+  %63 = apply %62(%59, %55, %61) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 126
+  unreachable, scope 126                          // id: %64
+}
+
+
+// _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+sil [fragile] [thunk] [always_inline] [_semantics "arc.programtermination_point"] [_semantics "stdlib_binary_only"] @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never
+
+sil_scope 127 {  parent @_TTSfq0n_k_k___TFFVs12StaticString14withUTF8BufferurFFGSRVs5UInt8_xxU_FS0_T_ : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> () }
+
+// specialized StaticString.(withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A).(closure #1)
+sil shared_external [fragile] @_TTSfq0n_k_k___TFFVs12StaticString14withUTF8BufferurFFGSRVs5UInt8_xxU_FS0_T_ : $@convention(thin) (UInt8, @inout_aliasable UInt64, @inout_aliasable Int) -> () {
+// %0                                             // users: %46, %3
+// %1                                             // users: %51, %6, %4
+// %2                                             // users: %59, %8, %5
+bb0(%0 : $UInt8, %1 : $*UInt64, %2 : $*Int):
+  debug_value %0 : $UInt8, scope 127              // id: %3
+  debug_value_addr %1 : $*UInt64, scope 127       // id: %4
+  debug_value_addr %2 : $*Int, scope 127          // id: %5
+  %6 = struct_element_addr %1 : $*UInt64, #UInt64._value, scope 127 // user: %7
+  %7 = load %6 : $*Builtin.Int64, scope 127       // user: %49
+  %8 = struct_element_addr %2 : $*Int, #Int._value, scope 127 // users: %53, %9
+  %9 = load %8 : $*Builtin.Int64, scope 127       // user: %10
+  %10 = builtin "s_to_u_checked_conversion_Int64"(%9 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 127 // users: %12, %11
+  %11 = tuple_extract %10 : $(Builtin.Int64, Builtin.Int1), 0, scope 127 // user: %16
+  %12 = tuple_extract %10 : $(Builtin.Int64, Builtin.Int1), 1, scope 127 // user: %13
+  cond_fail %12 : $Builtin.Int1, scope 127        // id: %13
+  %14 = integer_literal $Builtin.Int64, 8, scope 127 // user: %16
+  %15 = integer_literal $Builtin.Int1, -1, scope 127 // users: %54, %23, %16
+  %16 = builtin "umul_with_overflow_Int64"(%11 : $Builtin.Int64, %14 : $Builtin.Int64, %15 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 127 // users: %18, %17
+  %17 = tuple_extract %16 : $(Builtin.Int64, Builtin.Int1), 0, scope 127 // users: %48, %22
+  %18 = tuple_extract %16 : $(Builtin.Int64, Builtin.Int1), 1, scope 127 // user: %19
+  cond_fail %18 : $Builtin.Int1, scope 127        // id: %19
+  br bb1, scope 127                               // id: %20
+
+bb1:                                              // Preds: bb0
+  %21 = integer_literal $Builtin.Int64, 64, scope 127 // user: %22
+  %22 = builtin "cmp_ult_Int64"(%17 : $Builtin.Int64, %21 : $Builtin.Int64) : $Builtin.Int1, scope 127 // user: %23
+  %23 = builtin "int_expect_Int1"(%22 : $Builtin.Int1, %15 : $Builtin.Int1) : $Builtin.Int1, scope 127 // user: %24
+  cond_br %23, bb3, bb2, scope 127                // id: %24
+
+bb2:                                              // Preds: bb1
+  %25 = string_literal utf8 "shift amount is larger than type size in bits", scope 127 // user: %27
+  %26 = integer_literal $Builtin.Word, 45, scope 127 // user: %29
+  %27 = builtin "ptrtoint_Word"(%25 : $Builtin.RawPointer) : $Builtin.Word, scope 127 // user: %29
+  %28 = integer_literal $Builtin.Int8, 2, scope 127 // users: %40, %33, %29
+  %29 = struct $StaticString (%27 : $Builtin.Word, %26 : $Builtin.Word, %28 : $Builtin.Int8), scope 127 // user: %43
+  %30 = string_literal utf8 "/Library/Caches/com.apple.xbs/Binaries/swiftlang/swiftlang-800.0.43.6~5/TempContent/Objects/BNI_assert_lightweight/swift-macosx-x86_64/stdlib/public/core/8/FixedPoint.swift", scope 127 // user: %32
+  %31 = integer_literal $Builtin.Word, 172, scope 127 // user: %33
+  %32 = builtin "ptrtoint_Word"(%30 : $Builtin.RawPointer) : $Builtin.Word, scope 127 // user: %33
+  %33 = struct $StaticString (%32 : $Builtin.Word, %31 : $Builtin.Word, %28 : $Builtin.Int8), scope 127 // user: %43
+  %34 = integer_literal $Builtin.Int64, 6325, scope 127 // user: %35
+  %35 = struct $UInt (%34 : $Builtin.Int64), scope 127 // user: %43
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %36 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 127 // user: %43
+  %37 = string_literal utf8 "fatal error", scope 127 // user: %39
+  %38 = integer_literal $Builtin.Word, 11, scope 127 // user: %40
+  %39 = builtin "ptrtoint_Word"(%37 : $Builtin.RawPointer) : $Builtin.Word, scope 127 // user: %40
+  %40 = struct $StaticString (%39 : $Builtin.Word, %38 : $Builtin.Word, %28 : $Builtin.Int8), scope 127 // user: %43
+  %41 = integer_literal $Builtin.Int32, 1, scope 127 // user: %42
+  %42 = struct $UInt32 (%41 : $Builtin.Int32), scope 127 // user: %43
+  %43 = apply %36(%40, %29, %33, %35, %42) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 127
+  unreachable, scope 127                          // id: %44
+
+bb3:                                              // Preds: bb1
+  br bb4, scope 127                               // id: %45
+
+bb4:                                              // Preds: bb3
+  %46 = struct_extract %0 : $UInt8, #UInt8._value, scope 127 // user: %47
+  %47 = builtin "zext_Int8_Int64"(%46 : $Builtin.Int8) : $Builtin.Int64, scope 127 // user: %48
+  %48 = builtin "shl_Int64"(%47 : $Builtin.Int64, %17 : $Builtin.Int64) : $Builtin.Int64, scope 127 // user: %49
+  %49 = builtin "or_Int64"(%7 : $Builtin.Int64, %48 : $Builtin.Int64) : $Builtin.Int64, scope 127 // user: %50
+  %50 = struct $UInt64 (%49 : $Builtin.Int64), scope 127 // user: %51
+  store %50 to %1 : $*UInt64, scope 127           // id: %51
+  %52 = integer_literal $Builtin.Int64, 1, scope 127 // user: %54
+  %53 = load %8 : $*Builtin.Int64, scope 127      // user: %54
+  %54 = builtin "sadd_with_overflow_Int64"(%53 : $Builtin.Int64, %52 : $Builtin.Int64, %15 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 127 // users: %56, %55
+  %55 = tuple_extract %54 : $(Builtin.Int64, Builtin.Int1), 0, scope 127 // user: %58
+  %56 = tuple_extract %54 : $(Builtin.Int64, Builtin.Int1), 1, scope 127 // user: %57
+  cond_fail %56 : $Builtin.Int1, scope 127        // id: %57
+  %58 = struct $Int (%55 : $Builtin.Int64), scope 127 // user: %59
+  store %58 to %2 : $*Int, scope 127              // id: %59
+  %60 = tuple (), scope 127                       // user: %61
+  return %60 : $(), scope 127                     // id: %61
+}
+
+sil_scope 128 {  parent @_TTSfq4n_n_d___TTSgq5Vs5UInt8___TFSRCfT5startGSqGSPx__5countSi_GSRx_ : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8> }
+
+// specialized specialized UnsafeBufferPointer.init(start : UnsafePointer<A>?, count : Int) -> UnsafeBufferPointer<A>
+sil shared_external [fragile] @_TTSfq4n_n_d___TTSgq5Vs5UInt8___TFSRCfT5startGSqGSPx__5countSi_GSRx_ : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Int) -> UnsafeBufferPointer<UInt8> {
+// %0                                             // users: %77, %60, %58, %57, %56, %38, %37, %36, %35, %34, %33, %2
+// %1                                             // users: %67, %62, %11, %3
+bb0(%0 : $Optional<UnsafePointer<UInt8>>, %1 : $Int):
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %2
+  debug_value %1 : $Int, scope 128                // id: %3
+  br bb1, scope 128                               // id: %4
+
+bb1:                                              // Preds: bb0
+  %5 = integer_literal $Builtin.Int8, 2, scope 128 // users: %50, %43, %26, %19, %9
+  %6 = string_literal utf8 "/Library/Caches/com.apple.xbs/Binaries/swiftlang/swiftlang-800.0.43.6~5/TempContent/Objects/BNI_assert_lightweight/swift-macosx-x86_64/stdlib/public/core/8/UnsafeBufferPointer.swift", scope 128 // user: %8
+  %7 = integer_literal $Builtin.Word, 181, scope 128 // user: %9
+  %8 = builtin "ptrtoint_Word"(%6 : $Builtin.RawPointer) : $Builtin.Word, scope 128 // user: %9
+  %9 = struct $StaticString (%8 : $Builtin.Word, %7 : $Builtin.Word, %5 : $Builtin.Int8), scope 128 // users: %53, %29
+  %10 = integer_literal $Builtin.Int64, 0, scope 128 // users: %31, %12
+  %11 = struct_extract %1 : $Int, #Int._value, scope 128 // users: %31, %12
+  %12 = builtin "cmp_sge_Int64"(%11 : $Builtin.Int64, %10 : $Builtin.Int64) : $Builtin.Int1, scope 128 // user: %14
+  %13 = integer_literal $Builtin.Int1, -1, scope 128 // user: %14
+  %14 = builtin "int_expect_Int1"(%12 : $Builtin.Int1, %13 : $Builtin.Int1) : $Builtin.Int1, scope 128 // user: %15
+  cond_br %14, bb3, bb2, scope 128                // id: %15
+
+bb2:                                              // Preds: bb1
+  %16 = string_literal utf8 "UnsafeBufferPointer with negative count", scope 128 // user: %18
+  %17 = integer_literal $Builtin.Word, 39, scope 128 // user: %19
+  %18 = builtin "ptrtoint_Word"(%16 : $Builtin.RawPointer) : $Builtin.Word, scope 128 // user: %19
+  %19 = struct $StaticString (%18 : $Builtin.Word, %17 : $Builtin.Word, %5 : $Builtin.Int8), scope 128 // user: %29
+  %20 = integer_literal $Builtin.Int64, 366, scope 128 // user: %21
+  %21 = struct $UInt (%20 : $Builtin.Int64), scope 128 // user: %29
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %22 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 128 // user: %29
+  %23 = string_literal utf8 "fatal error", scope 128 // user: %25
+  %24 = integer_literal $Builtin.Word, 11, scope 128 // user: %26
+  %25 = builtin "ptrtoint_Word"(%23 : $Builtin.RawPointer) : $Builtin.Word, scope 128 // user: %26
+  %26 = struct $StaticString (%25 : $Builtin.Word, %24 : $Builtin.Word, %5 : $Builtin.Int8), scope 128 // user: %29
+  %27 = integer_literal $Builtin.Int32, 1, scope 128 // user: %28
+  %28 = struct $UInt32 (%27 : $Builtin.Int32), scope 128 // user: %29
+  %29 = apply %22(%26, %19, %9, %21, %28) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 128
+  unreachable, scope 128                          // id: %30
+
+bb3:                                              // Preds: bb1
+  %31 = builtin "cmp_eq_Int64"(%11 : $Builtin.Int64, %10 : $Builtin.Int64) : $Builtin.Int1, scope 128 // user: %32
+  cond_br %31, bb7, bb4, scope 128                // id: %32
+
+bb4:                                              // Preds: bb3
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %33
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %34
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %35
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %36
+  switch_enum %0 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb6, case #Optional.some!enumelt.1: bb5, scope 128 // id: %37
+
+bb5:                                              // Preds: bb4
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %38
+  br bb11, scope 128                              // id: %39
+
+bb6:                                              // Preds: bb4
+  %40 = string_literal utf8 "UnsafeBufferPointer has a nil start and nonzero count", scope 128 // user: %42
+  %41 = integer_literal $Builtin.Word, 53, scope 128 // user: %43
+  %42 = builtin "ptrtoint_Word"(%40 : $Builtin.RawPointer) : $Builtin.Word, scope 128 // user: %43
+  %43 = struct $StaticString (%42 : $Builtin.Word, %41 : $Builtin.Word, %5 : $Builtin.Int8), scope 128 // user: %53
+  %44 = integer_literal $Builtin.Int64, 368, scope 128 // user: %45
+  %45 = struct $UInt (%44 : $Builtin.Int64), scope 128 // user: %53
+  // function_ref _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %46 = function_ref @_TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 128 // user: %53
+  %47 = string_literal utf8 "fatal error", scope 128 // user: %49
+  %48 = integer_literal $Builtin.Word, 11, scope 128 // user: %50
+  %49 = builtin "ptrtoint_Word"(%47 : $Builtin.RawPointer) : $Builtin.Word, scope 128 // user: %50
+  %50 = struct $StaticString (%49 : $Builtin.Word, %48 : $Builtin.Word, %5 : $Builtin.Int8), scope 128 // user: %53
+  %51 = integer_literal $Builtin.Int32, 1, scope 128 // user: %52
+  %52 = struct $UInt32 (%51 : $Builtin.Int32), scope 128 // user: %53
+  %53 = apply %46(%50, %43, %9, %45, %52) : $@convention(thin) (StaticString, StaticString, StaticString, UInt, UInt32) -> Never, scope 128
+  unreachable, scope 128                          // id: %54
+
+bb7:                                              // Preds: bb3
+  br bb8, scope 128                               // id: %55
+
+bb8:                                              // Preds: bb7
+  debug_value %0 : $Optional<UnsafePointer<UInt8>>, scope 128 // id: %56
+  switch_enum %0 : $Optional<UnsafePointer<UInt8>>, case #Optional.some!enumelt.1: bb10, case #Optional.none!enumelt: bb9, scope 128 // id: %57
+
+bb9:                                              // Preds: bb8
+  br bb12(%0 : $Optional<UnsafePointer<UInt8>>), scope 128 // id: %58
+
+bb10:                                             // Preds: bb8
+  br bb11, scope 128                              // id: %59
+
+bb11:                                             // Preds: bb10 bb5
+  %60 = unchecked_enum_data %0 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 128 // users: %63, %61
+  debug_value %60 : $UnsafePointer<UInt8>, scope 128 // id: %61
+  debug_value %1 : $Int, scope 128                // id: %62
+  %63 = struct_extract %60 : $UnsafePointer<UInt8>, #UnsafePointer._rawValue, scope 128 // user: %72
+  %64 = metatype $@thick UInt8.Type, scope 128    // user: %65
+  %65 = builtin "strideof_nonzero"<UInt8>(%64 : $@thick UInt8.Type) : $Builtin.Word, scope 128 // user: %66
+  %66 = builtin "zextOrBitCast_Word_Int64"(%65 : $Builtin.Word) : $Builtin.Int64, scope 128 // user: %69
+  %67 = struct_extract %1 : $Int, #Int._value, scope 128 // user: %69
+  %68 = integer_literal $Builtin.Int1, 0, scope 128 // user: %69
+  %69 = builtin "smul_with_overflow_Int64"(%67 : $Builtin.Int64, %66 : $Builtin.Int64, %68 : $Builtin.Int1) : $(Builtin.Int64, Builtin.Int1), scope 128 // user: %70
+  %70 = tuple_extract %69 : $(Builtin.Int64, Builtin.Int1), 0, scope 128 // user: %71
+  %71 = builtin "truncOrBitCast_Int64_Word"(%70 : $Builtin.Int64) : $Builtin.Word, scope 128 // user: %72
+  %72 = index_raw_pointer %63 : $Builtin.RawPointer, %71 : $Builtin.Word, scope 128 // user: %73
+  %73 = struct $UnsafePointer<UInt8> (%72 : $Builtin.RawPointer), scope 128 // user: %74
+  %74 = enum $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, %73 : $UnsafePointer<UInt8>, scope 128 // user: %75
+  br bb12(%74 : $Optional<UnsafePointer<UInt8>>), scope 128 // id: %75
+
+// %76                                            // user: %77
+bb12(%76 : $Optional<UnsafePointer<UInt8>>):      // Preds: bb11 bb9
+  %77 = struct $UnsafeBufferPointer<UInt8> (%0 : $Optional<UnsafePointer<UInt8>>, %76 : $Optional<UnsafePointer<UInt8>>), scope 128 // user: %78
+  return %77 : $UnsafeBufferPointer<UInt8>, scope 128 // id: %78
+}
+
+sil_scope 129 {  parent @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1)
+sil shared_external [fragile] @_TFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, StaticString, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () {
+// %0                                             // users: %11, %5
+// %1                                             // users: %14, %6
+// %2                                             // users: %11, %7
+// %3                                             // users: %11, %8
+// %4                                             // users: %11, %9
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $StaticString, %2 : $UnsafeBufferPointer<UInt8>, %3 : $UInt, %4 : $UInt):
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 129 // id: %5
+  debug_value %1 : $StaticString, scope 129       // id: %6
+  debug_value %2 : $UnsafeBufferPointer<UInt8>, scope 129 // id: %7
+  debug_value %3 : $UInt, scope 129               // id: %8
+  debug_value %4 : $UInt, scope 129               // id: %9
+  // function_ref (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1).(closure #1)
+  %10 = function_ref @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 129 // user: %11
+  %11 = partial_apply %10(%2, %0, %3, %4) : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> (), scope 129 // user: %14
+  // function_ref specialized specialized StaticString.withUTF8Buffer<A> ((UnsafeBufferPointer<UInt8>) -> A) -> A
+  %12 = function_ref @_TTSfq1n_cl39_TTRXFo_dGSRVs5UInt8___XFo_dGSRS___iT__XFo_dGSRVs5UInt8____n___TTSgq5T____TFVs12StaticString14withUTF8BufferurfFGSRVs5UInt8_xx : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 129 // user: %14
+  %13 = alloc_stack $(), scope 129                // users: %15, %14
+  %14 = apply %12(%13, %1, %11) : $@convention(thin) (StaticString, @owned @callee_owned (UnsafeBufferPointer<UInt8>) -> ()) -> @out (), scope 129
+  dealloc_stack %13 : $*(), scope 129             // id: %15
+  %16 = tuple (), scope 129                       // user: %17
+  return %16 : $(), scope 129                     // id: %17
+}
+
+sil_scope 130 {  parent @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () }
+
+// (_unimplementedInitializer(className : StaticString, initName : StaticString, file : StaticString, line : UInt, column : UInt) -> Never).(closure #1).(closure #1).(closure #1)
+sil shared_external [fragile] @_TFFFFs25_unimplementedInitializerFT9classNameVs12StaticString8initNameS_4fileS_4lineSu6columnSu_Os5NeverU_FGSRVs5UInt8_T_U_FGSRS1__T_U_FGSRS1__T_ : $@convention(thin) (UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UnsafeBufferPointer<UInt8>, UInt, UInt) -> () {
+// %0                                             // users: %40, %30, %29, %5
+// %1                                             // users: %14, %11, %10, %6
+// %2                                             // users: %23, %21, %20, %7
+// %3                                             // users: %50, %8
+// %4                                             // users: %50, %9
+bb0(%0 : $UnsafeBufferPointer<UInt8>, %1 : $UnsafeBufferPointer<UInt8>, %2 : $UnsafeBufferPointer<UInt8>, %3 : $UInt, %4 : $UInt):
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %5
+  debug_value %1 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %6
+  debug_value %2 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %7
+  debug_value %3 : $UInt, scope 130               // id: %8
+  debug_value %4 : $UInt, scope 130               // id: %9
+  debug_value %1 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %10
+  %11 = struct_extract %1 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._position, scope 130 // users: %33, %15, %12
+  switch_enum %11 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb8, case #Optional.some!enumelt.1: bb1, scope 130 // id: %12
+
+bb1:                                              // Preds: bb0
+  // function_ref specialized specialized UnsafeBufferPointer.count.getter
+  %13 = function_ref @_TTSfq4s___TTSgq5Vs5UInt8___TFSRg5countSi : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 130 // users: %41, %24, %15
+  %14 = struct_extract %1 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._end, scope 130 // user: %15
+  %15 = apply %13(%11, %14) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 130 // user: %16
+  %16 = struct_extract %15 : $Int, #Int._value, scope 130 // user: %17
+  %17 = builtin "s_to_u_checked_conversion_Int64"(%16 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 130 // users: %34, %18
+  %18 = tuple_extract %17 : $(Builtin.Int64, Builtin.Int1), 1, scope 130 // user: %19
+  cond_fail %18 : $Builtin.Int1, scope 130        // id: %19
+  debug_value %2 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %20
+  %21 = struct_extract %2 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._position, scope 130 // users: %36, %24, %22
+  switch_enum %21 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb6, case #Optional.some!enumelt.1: bb2, scope 130 // id: %22
+
+bb2:                                              // Preds: bb1
+  %23 = struct_extract %2 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._end, scope 130 // user: %24
+  %24 = apply %13(%21, %23) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 130 // user: %25
+  %25 = struct_extract %24 : $Int, #Int._value, scope 130 // user: %26
+  %26 = builtin "s_to_u_checked_conversion_Int64"(%25 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 130 // users: %37, %27
+  %27 = tuple_extract %26 : $(Builtin.Int64, Builtin.Int1), 1, scope 130 // user: %28
+  cond_fail %27 : $Builtin.Int1, scope 130        // id: %28
+  debug_value %0 : $UnsafeBufferPointer<UInt8>, scope 130 // id: %29
+  %30 = struct_extract %0 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._position, scope 130 // users: %41, %39, %31
+  switch_enum %30 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb4, case #Optional.some!enumelt.1: bb3, scope 130 // id: %31
+
+bb3:                                              // Preds: bb2
+  // function_ref _swift_stdlib_reportUnimplementedInitializerInFile
+  %32 = function_ref @_swift_stdlib_reportUnimplementedInitializerInFile : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt, UInt, UInt32) -> (), scope 130 // user: %50
+  %33 = unchecked_enum_data %11 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 130 // user: %50
+  %34 = tuple_extract %17 : $(Builtin.Int64, Builtin.Int1), 0, scope 130 // user: %35
+  %35 = struct $UInt (%34 : $Builtin.Int64), scope 130 // user: %50
+  %36 = unchecked_enum_data %21 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 130 // user: %50
+  %37 = tuple_extract %26 : $(Builtin.Int64, Builtin.Int1), 0, scope 130 // user: %38
+  %38 = struct $UInt (%37 : $Builtin.Int64), scope 130 // user: %50
+  %39 = unchecked_enum_data %30 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 130 // user: %50
+  %40 = struct_extract %0 : $UnsafeBufferPointer<UInt8>, #UnsafeBufferPointer._end, scope 130 // user: %41
+  %41 = apply %13(%30, %40) : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int, scope 130 // user: %42
+  %42 = struct_extract %41 : $Int, #Int._value, scope 130 // user: %43
+  %43 = builtin "s_to_u_checked_conversion_Int64"(%42 : $Builtin.Int64) : $(Builtin.Int64, Builtin.Int1), scope 130 // users: %45, %44
+  %44 = tuple_extract %43 : $(Builtin.Int64, Builtin.Int1), 0, scope 130 // user: %47
+  %45 = tuple_extract %43 : $(Builtin.Int64, Builtin.Int1), 1, scope 130 // user: %46
+  cond_fail %45 : $Builtin.Int1, scope 130        // id: %46
+  %47 = struct $UInt (%44 : $Builtin.Int64), scope 130 // user: %50
+  %48 = integer_literal $Builtin.Int32, 0, scope 130 // user: %49
+  %49 = struct $UInt32 (%48 : $Builtin.Int32), scope 130 // user: %50
+  %50 = apply %32(%33, %35, %36, %38, %39, %47, %3, %4, %49) : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt, UInt, UInt32) -> (), scope 130
+  %51 = tuple (), scope 130                       // user: %52
+  return %51 : $(), scope 130                     // id: %52
+
+bb4:                                              // Preds: bb2
+  br bb5, scope 130                               // id: %53
+
+bb5:                                              // Preds: bb4
+  %54 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 130 // user: %56
+  %55 = integer_literal $Builtin.Word, 57, scope 130 // user: %58
+  %56 = builtin "ptrtoint_Word"(%54 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %58
+  %57 = integer_literal $Builtin.Int8, 2, scope 130 // users: %62, %58
+  %58 = struct $StaticString (%56 : $Builtin.Word, %55 : $Builtin.Word, %57 : $Builtin.Int8), scope 130 // user: %66
+  %59 = string_literal utf8 "fatal error", scope 130 // user: %61
+  %60 = integer_literal $Builtin.Word, 11, scope 130 // user: %62
+  %61 = builtin "ptrtoint_Word"(%59 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %62
+  %62 = struct $StaticString (%61 : $Builtin.Word, %60 : $Builtin.Word, %57 : $Builtin.Int8), scope 130 // user: %66
+  %63 = integer_literal $Builtin.Int32, 1, scope 130 // user: %64
+  %64 = struct $UInt32 (%63 : $Builtin.Int32), scope 130 // user: %66
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %65 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130 // user: %66
+  %66 = apply %65(%62, %58, %64) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130
+  unreachable, scope 130                          // id: %67
+
+bb6:                                              // Preds: bb1
+  br bb7, scope 130                               // id: %68
+
+bb7:                                              // Preds: bb6
+  %69 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 130 // user: %71
+  %70 = integer_literal $Builtin.Word, 57, scope 130 // user: %73
+  %71 = builtin "ptrtoint_Word"(%69 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %73
+  %72 = integer_literal $Builtin.Int8, 2, scope 130 // users: %77, %73
+  %73 = struct $StaticString (%71 : $Builtin.Word, %70 : $Builtin.Word, %72 : $Builtin.Int8), scope 130 // user: %81
+  %74 = string_literal utf8 "fatal error", scope 130 // user: %76
+  %75 = integer_literal $Builtin.Word, 11, scope 130 // user: %77
+  %76 = builtin "ptrtoint_Word"(%74 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %77
+  %77 = struct $StaticString (%76 : $Builtin.Word, %75 : $Builtin.Word, %72 : $Builtin.Int8), scope 130 // user: %81
+  %78 = integer_literal $Builtin.Int32, 1, scope 130 // user: %79
+  %79 = struct $UInt32 (%78 : $Builtin.Int32), scope 130 // user: %81
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %80 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130 // user: %81
+  %81 = apply %80(%77, %73, %79) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130
+  unreachable, scope 130                          // id: %82
+
+bb8:                                              // Preds: bb0
+  br bb9, scope 130                               // id: %83
+
+bb9:                                              // Preds: bb8
+  %84 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 130 // user: %86
+  %85 = integer_literal $Builtin.Word, 57, scope 130 // user: %88
+  %86 = builtin "ptrtoint_Word"(%84 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %88
+  %87 = integer_literal $Builtin.Int8, 2, scope 130 // users: %92, %88
+  %88 = struct $StaticString (%86 : $Builtin.Word, %85 : $Builtin.Word, %87 : $Builtin.Int8), scope 130 // user: %96
+  %89 = string_literal utf8 "fatal error", scope 130 // user: %91
+  %90 = integer_literal $Builtin.Word, 11, scope 130 // user: %92
+  %91 = builtin "ptrtoint_Word"(%89 : $Builtin.RawPointer) : $Builtin.Word, scope 130 // user: %92
+  %92 = struct $StaticString (%91 : $Builtin.Word, %90 : $Builtin.Word, %87 : $Builtin.Int8), scope 130 // user: %96
+  %93 = integer_literal $Builtin.Int32, 1, scope 130 // user: %94
+  %94 = struct $UInt32 (%93 : $Builtin.Int32), scope 130 // user: %96
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %95 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130 // user: %96
+  %96 = apply %95(%92, %88, %94) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 130
+  unreachable, scope 130                          // id: %97
+}
+
+sil_scope 131 {  parent @_TTSfq4s___TTSgq5Vs5UInt8___TFSRg5countSi : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int }
+
+// specialized specialized UnsafeBufferPointer.count.getter
+sil shared_external [fragile] @_TTSfq4s___TTSgq5Vs5UInt8___TFSRg5countSi : $@convention(thin) (Optional<UnsafePointer<UInt8>>, Optional<UnsafePointer<UInt8>>) -> Int {
+// %0                                             // user: %2
+// %1                                             // users: %8, %7
+bb0(%0 : $Optional<UnsafePointer<UInt8>>, %1 : $Optional<UnsafePointer<UInt8>>):
+  switch_enum %0 : $Optional<UnsafePointer<UInt8>>, case #Optional.some!enumelt.1: bb2, case #Optional.none!enumelt: bb1, scope 131 // id: %2
+
+bb1:                                              // Preds: bb0
+  %3 = integer_literal $Builtin.Int64, 0, scope 131 // user: %4
+  br bb7(%3 : $Builtin.Int64), scope 131          // id: %4
+
+// %5                                             // users: %11, %6
+bb2(%5 : $UnsafePointer<UInt8>):                  // Preds: bb0
+  debug_value %5 : $UnsafePointer<UInt8>, scope 131 // id: %6
+  switch_enum %1 : $Optional<UnsafePointer<UInt8>>, case #Optional.none!enumelt: bb8, case #Optional.some!enumelt.1: bb3, scope 131 // id: %7
+
+bb3:                                              // Preds: bb2
+  %8 = unchecked_enum_data %1 : $Optional<UnsafePointer<UInt8>>, #Optional.some!enumelt.1, scope 131 // user: %9
+  %9 = struct_extract %8 : $UnsafePointer<UInt8>, #UnsafePointer._rawValue, scope 131 // user: %10
+  %10 = builtin "ptrtoint_Word"(%9 : $Builtin.RawPointer) : $Builtin.Word, scope 131 // user: %13
+  %11 = struct_extract %5 : $UnsafePointer<UInt8>, #UnsafePointer._rawValue, scope 131 // user: %12
+  %12 = builtin "ptrtoint_Word"(%11 : $Builtin.RawPointer) : $Builtin.Word, scope 131 // user: %13
+  %13 = builtin "sub_Word"(%10 : $Builtin.Word, %12 : $Builtin.Word) : $Builtin.Word, scope 131 // user: %14
+  %14 = builtin "zextOrBitCast_Word_Int64"(%13 : $Builtin.Word) : $Builtin.Int64, scope 131 // users: %29, %22
+  %15 = metatype $@thick UInt8.Type, scope 131    // user: %16
+  %16 = builtin "strideof_nonzero"<UInt8>(%15 : $@thick UInt8.Type) : $Builtin.Word, scope 131 // user: %17
+  %17 = builtin "zextOrBitCast_Word_Int64"(%16 : $Builtin.Word) : $Builtin.Int64, scope 131 // users: %29, %26, %19
+  %18 = integer_literal $Builtin.Int64, 0, scope 131 // user: %19
+  %19 = builtin "cmp_eq_Int64"(%17 : $Builtin.Int64, %18 : $Builtin.Int64) : $Builtin.Int1, scope 131 // user: %20
+  cond_fail %19 : $Builtin.Int1, scope 131        // id: %20
+  %21 = integer_literal $Builtin.Int64, -9223372036854775808, scope 131 // user: %22
+  %22 = builtin "cmp_eq_Int64"(%14 : $Builtin.Int64, %21 : $Builtin.Int64) : $Builtin.Int1, scope 131 // user: %23
+  cond_br %22, bb5, bb4, scope 131                // id: %23
+
+bb4:                                              // Preds: bb3
+  br bb6, scope 131                               // id: %24
+
+bb5:                                              // Preds: bb3
+  %25 = integer_literal $Builtin.Int64, -1, scope 131 // user: %26
+  %26 = builtin "cmp_eq_Int64"(%17 : $Builtin.Int64, %25 : $Builtin.Int64) : $Builtin.Int1, scope 131 // user: %27
+  cond_fail %26 : $Builtin.Int1, scope 131        // id: %27
+  br bb6, scope 131                               // id: %28
+
+bb6:                                              // Preds: bb5 bb4
+  %29 = builtin "sdiv_Int64"(%14 : $Builtin.Int64, %17 : $Builtin.Int64) : $Builtin.Int64, scope 131 // user: %30
+  br bb7(%29 : $Builtin.Int64), scope 131         // id: %30
+
+// %31                                            // user: %32
+bb7(%31 : $Builtin.Int64):                        // Preds: bb6 bb1
+  %32 = struct $Int (%31 : $Builtin.Int64), scope 131 // user: %33
+  return %32 : $Int, scope 131                    // id: %33
+
+bb8:                                              // Preds: bb2
+  br bb9, scope 131                               // id: %34
+
+bb9:                                              // Preds: bb8
+  %35 = string_literal utf8 "unexpectedly found nil while unwrapping an Optional value", scope 131 // user: %37
+  %36 = integer_literal $Builtin.Word, 57, scope 131 // user: %39
+  %37 = builtin "ptrtoint_Word"(%35 : $Builtin.RawPointer) : $Builtin.Word, scope 131 // user: %39
+  %38 = integer_literal $Builtin.Int8, 2, scope 131 // users: %43, %39
+  %39 = struct $StaticString (%37 : $Builtin.Word, %36 : $Builtin.Word, %38 : $Builtin.Int8), scope 131 // user: %47
+  %40 = string_literal utf8 "fatal error", scope 131 // user: %42
+  %41 = integer_literal $Builtin.Word, 11, scope 131 // user: %43
+  %42 = builtin "ptrtoint_Word"(%40 : $Builtin.RawPointer) : $Builtin.Word, scope 131 // user: %43
+  %43 = struct $StaticString (%42 : $Builtin.Word, %41 : $Builtin.Word, %38 : $Builtin.Int8), scope 131 // user: %47
+  %44 = integer_literal $Builtin.Int32, 1, scope 131 // user: %45
+  %45 = struct $UInt32 (%44 : $Builtin.Int32), scope 131 // user: %47
+  // function_ref specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+  %46 = function_ref @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 131 // user: %47
+  %47 = apply %46(%43, %39, %45) : $@convention(thin) (StaticString, StaticString, UInt32) -> Never, scope 131
+  unreachable, scope 131                          // id: %48
+}
+
+
+// _swift_stdlib_reportUnimplementedInitializerInFile
+sil @_swift_stdlib_reportUnimplementedInitializerInFile : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt, UInt, UInt32) -> ()
+
+
+// specialized _fatalErrorMessage(StaticString, StaticString, StaticString, UInt, flags : UInt32) -> Never
+sil [fragile] [noinline] [_semantics "arc.programtermination_point"] [_semantics "stdlib_binary_only"] @_TTSfq4n_n_d_d_n___TFs18_fatalErrorMessageFTVs12StaticStringS_S_Su5flagsVs6UInt32_Os5Never : $@convention(thin) (StaticString, StaticString, UInt32) -> Never
+
+
+// _swift_stdlib_reportUnimplementedInitializer
+sil @_swift_stdlib_reportUnimplementedInitializer : $@convention(thin) (UnsafePointer<UInt8>, UInt, UnsafePointer<UInt8>, UInt, UInt32) -> ()
+
+sil_vtable LocationWrapper {
+  #LocationWrapper.coordinate!getter.1: _TFC8Location15LocationWrapperg10coordinateTOS_8PositionSd_	// LocationWrapper.coordinate.getter
+  #LocationWrapper.name!getter.1: _TFC8Location15LocationWrapperg4nameSS	// LocationWrapper.name.getter
+  #LocationWrapper.init!initializer.1: _TFC8Location15LocationWrappercfT10coordinateTOS_8PositionSd_4nameSS_S0_	// LocationWrapper.init(coordinate : (Position, Double), name : String) -> LocationWrapper
+  #LocationWrapper.init!initializer.1: _TFC8Location15LocationWrappercfT8locationVS_8Location_S0_	// LocationWrapper.init(location : Location) -> LocationWrapper
+  #LocationWrapper.length!1: _TFC8Location15LocationWrapper6lengthfT_Sd	// LocationWrapper.length() -> Double
+  #LocationWrapper.objcTest!1: _TFC8Location15LocationWrapper8objcTestfT_Sb	// LocationWrapper.objcTest() -> Bool
+  #LocationWrapper.nonobjcTest!1: _TFC8Location15LocationWrapper11nonobjcTestfT_Sb	// LocationWrapper.nonobjcTest() -> Bool
+  #LocationWrapper.deinit!deallocator: _TFC8Location15LocationWrapperD	// LocationWrapper.__deallocating_deinit
+  #LocationWrapper.init!initializer.1: _TFC8Location15LocationWrappercfT_S0_	// LocationWrapper.init() -> LocationWrapper
+}
+
+sil_vtable LocationFunctions {
+  #LocationFunctions.deinit!deallocator: _TFC8Location17LocationFunctionsD	// LocationFunctions.__deallocating_deinit
+  #LocationFunctions.init!initializer.1: _TFC8Location17LocationFunctionscfT_S0_	// LocationFunctions.init() -> LocationFunctions
+}
+
+sil_witness_table [fragile] CoordinateError: Equatable module Location {
+  method #Equatable."=="!1: @_TTWO8Location15CoordinateErrors9EquatableS_ZFS1_oi2eefTxx_Sb	// protocol witness for static Equatable.== infix(A, A) -> Bool in conformance CoordinateError
+}
+
+sil_witness_table [fragile] CoordinateError: Hashable module Location {
+  base_protocol _Hashable: CoordinateError: _Hashable module Location
+  base_protocol Equatable: CoordinateError: Equatable module Location
+  method #Hashable.hashValue!getter.1: @_TTWO8Location15CoordinateErrors8HashableS_FS1_g9hashValueSi	// protocol witness for Hashable.hashValue.getter in conformance CoordinateError
+}
+
+sil_witness_table [fragile] CoordinateError: RawRepresentable module Location {
+  associated_type RawValue: Int
+  method #RawRepresentable.init!allocator.1: @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_CfT8rawValuewx8RawValue_GSqx_	// protocol witness for RawRepresentable.init(rawValue : A.RawValue) -> A? in conformance CoordinateError
+  method #RawRepresentable.rawValue!getter.1: @_TTWO8Location15CoordinateErrors16RawRepresentableS_FS1_g8rawValuewx8RawValue	// protocol witness for RawRepresentable.rawValue.getter in conformance CoordinateError
+}
+
+sil_witness_table [fragile] CoordinateError: Error module Location {
+  method #Error._domain!getter.1: @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g7_domainSS	// protocol witness for Error._domain.getter in conformance CoordinateError
+  method #Error._code!getter.1: @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g5_codeSi	// protocol witness for Error._code.getter in conformance CoordinateError
+  method #Error._userInfo!getter.1: @_TTWO8Location15CoordinateErrors5ErrorS_FS1_g9_userInfoGSqP__	// protocol witness for Error._userInfo.getter in conformance CoordinateError
+  method #Error._getEmbeddedNSError!1: @_TTWO8Location15CoordinateErrors5ErrorS_FS1_19_getEmbeddedNSErrorfT_GSqPs9AnyObject__	// protocol witness for Error._getEmbeddedNSError() -> AnyObject? in conformance CoordinateError
+}
+
+sil_witness_table [fragile] CoordinateError: _Hashable module Location {
+  method #_Hashable._toAnyHashable!1: @_TTWO8Location15CoordinateErrors9_HashableS_FS1_14_toAnyHashablefT_Vs11AnyHashable	// protocol witness for _Hashable._toAnyHashable() -> AnyHashable in conformance CoordinateError
+}
+
+sil_witness_table public_external [fragile] Int: Equatable module Swift {
+  method #Equatable."=="!1: @_TTWSis9EquatablesZFS_oi2eefTxx_Sb	// protocol witness for static Equatable.== infix(A, A) -> Bool in conformance Int
+}
+
+
+

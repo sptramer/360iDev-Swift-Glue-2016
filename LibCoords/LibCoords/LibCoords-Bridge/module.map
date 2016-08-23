@@ -1,0 +1,4 @@
+module LibCoordsBridge [system] {
+    header "Location.h"
+    export *
+}
