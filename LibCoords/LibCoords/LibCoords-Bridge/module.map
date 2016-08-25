@@ -1,3 +1,11 @@
+// This is the "module" that is used to import the Objective-C side of the bridge that is
+// contained within the Swift framework.
+//
+// There is only one issue! The first time you build this library (or after a DerivedData clean), and then try and compile
+// in Objective-C, you will get an error regarding '@import LibCoordsBridge' - the compiler believes
+// this is a real module. So you will need to *manually remove* this line after each compile of the library.
+// Make extra sure you do this if you're shipping a library with bridge code!
+
 module LibCoordsBridge [system] {
     header "Location.h"
     export *

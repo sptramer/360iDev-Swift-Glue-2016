@@ -16,6 +16,7 @@
 typedef enum {
     ModePrint,
     ModeMidpoint,
+    ModeExample,
 } Mode;
 
 LocationWrapper* parseLocation(const char* const);
@@ -24,7 +25,7 @@ int main(int argc, const char * argv[]) {
     Mode mode = ModePrint;
     @autoreleasepool {
         int optcode = 0;
-        while ((optcode = getopt(argc, (char**)argv, "pmh")) != -1) {
+        while ((optcode = getopt(argc, (char**)argv, "pmhe")) != -1) {
             switch (optcode) {
                 case 'p':
                     mode = ModePrint;
@@ -32,12 +33,16 @@ int main(int argc, const char * argv[]) {
                 case 'm':
                     mode = ModeMidpoint;
                     break;
+                case 'e':
+                    mode = ModeExample;
+                    break;
                 case 'h':
                     printf("Thank you for asking for help! Please try:\n"
-                           "%s [-h|-m|-p] [points...]\n"
+                           "%s [-h|-m|-p|-e] [points...]\n"
                            "\t-h: Help!\n"
                            "\t-m: Compute midpoints! (points must all be of the same type)\n"
-                           "\t-p: Print those points!\n\n"
+                           "\t-p: Print those points!\n"
+                           "\t-e: Run the bridging example function on points!\n\n"
                            "A location is written as either:\n"
                            "\tname([Int|Double|Bool],Double)\n"
                            "\t([Int|Double|Bool],Double)\n", argv[0]);
@@ -110,6 +115,12 @@ int main(int argc, const char * argv[]) {
                 }
                 printf(",%f)\n", midpoint.value);
                 break;
+            }
+            case ModeExample: {
+                for (LocationWrapper* location in locations) {
+                    ExampleMapping value = _SW_LibCoords_example(location.coordinate.value);
+                    printf("(%ld, %f)\n", value.value_1, value.value_2);
+                }
             }
         }
     }
