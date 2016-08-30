@@ -174,8 +174,10 @@ fileprivate func wrap(coordinate: Coordinate) -> CoordinateWrapper {
     return wrapper
 }
 
-fileprivate func unwrap(coordinate: CoordinateWrapper) -> Coordinate {
-    return (coordinate.position.unwrap(), coordinate.value)
+extension CoordinateWrapper {
+    func unwrap() -> Coordinate {
+        return (self.position.unwrap(), self.value)
+    }
 }
 
 @objc
@@ -187,7 +189,7 @@ public class LocationWrapper : NSObject {
     public
     init(coordinate: CoordinateWrapper, name: String) {
         // Because there is a `self.unwrap` here, we need the fully-qualified name of the toplevel function.
-        self.location = Location(coordinate: LibCoords.unwrap(coordinate: coordinate), name: name)
+        self.location = Location(coordinate: coordinate.unwrap(), name: name)
     }
 
     fileprivate
@@ -231,7 +233,7 @@ public class LocationFunctions : NSObject {
     public static func midpoint(x: CoordinateWrapper, y: CoordinateWrapper, error: NSErrorPointer) -> CoordinateWrapper {
         //With proper compiler support, the error: argument goes away and the catch block is removed from the method.
         do {
-            let coordinate = try LibCoords.midpoint(x: unwrap(coordinate: x), y: unwrap(coordinate: y))
+            let coordinate = try LibCoords.midpoint(x: x.unwrap(), y: y.unwrap())
             return wrap(coordinate: coordinate)
         }
         catch let throwError {
